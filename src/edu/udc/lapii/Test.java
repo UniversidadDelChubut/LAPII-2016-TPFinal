@@ -18,6 +18,12 @@ public class Test {
 		Propietario p3 = new Propietario();
 		p3.setTelefono("0280444-4890");
 		System.out.println(p3.getTelefono());
+
+		Propietario p4 = new Propietario();
+		p4.setTelefono("0280-4405590");
+		System.out.println(p4.getTelefono());
+
+		
 	}
 	
 	
