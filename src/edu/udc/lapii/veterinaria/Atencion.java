@@ -56,8 +56,5 @@ public class Atencion {
 		return vacunacion;
 	}
 	
-	
-	
-	
-	
+
 }
