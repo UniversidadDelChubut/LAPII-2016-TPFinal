@@ -13,10 +13,10 @@ public class Atencion {
 	private Internacion internacion;
 	private PracticaMedica practicaMedica;
 	private Veterinario veterinario;
-	
+	private Vacunacion vacunacion;
 	public Atencion(Date fechaDeAtencion, String dianostico, String observaciones, Ambulatorio ambulatorio,
-			Domiciliaria domiciliaria, Internacion internacion, PracticaMedica practicaMedica,
-			Veterinario veterinario) {
+			Domiciliaria domiciliaria, Internacion internacion, PracticaMedica practicaMedica, Veterinario veterinario,
+			Vacunacion vacunacion) {
 		super();
 		this.fechaDeAtencion = fechaDeAtencion;
 		this.dianostico = dianostico;
@@ -26,41 +26,35 @@ public class Atencion {
 		this.internacion = internacion;
 		this.practicaMedica = practicaMedica;
 		this.veterinario = veterinario;
+		this.vacunacion = vacunacion;
 	}
-
 	public Date getFechaDeAtencion() {
 		return fechaDeAtencion;
 	}
-
 	public String getDianostico() {
 		return dianostico;
 	}
-
 	public String getObservaciones() {
 		return observaciones;
 	}
-
 	public Ambulatorio getAmbulatorio() {
 		return ambulatorio;
 	}
-
 	public Domiciliaria getDomiciliaria() {
 		return domiciliaria;
 	}
-
 	public Internacion getInternacion() {
 		return internacion;
 	}
-
 	public PracticaMedica getPracticaMedica() {
 		return practicaMedica;
 	}
-
 	public Veterinario getVeterinario() {
 		return veterinario;
 	}
+	public Vacunacion getVacunacion() {
+		return vacunacion;
+	}
 	
-	
-	
-	
+
 }
