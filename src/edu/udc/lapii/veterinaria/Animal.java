@@ -24,6 +24,8 @@ public class Animal {
 	
 	//Ver historiaClinita
 
-
+	public String getColor(){
+		return color;
+	}
 }
 
