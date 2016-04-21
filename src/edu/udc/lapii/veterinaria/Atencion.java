@@ -2,7 +2,7 @@ package edu.udc.lapii.veterinaria;
 
 import java.util.Date;
 
-public class Atencion {
+public abstract class Atencion {
 	
 	private Date fechaDeAtencion;
 	private String dianostico;
