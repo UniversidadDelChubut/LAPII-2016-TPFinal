@@ -9,7 +9,7 @@ public class Veterinario {
 	
 	public Veterinario(String nombre, String apellido, int matricula, int nCelular) {
 		setNombre(nombre);
-		setApellido(apellido);
+		setApellido(apellido); //El apellido
 		setMatricula(matricula);
 		setNCelular(nCelular);
 	}
