@@ -13,9 +13,5 @@ public class Atencion {
 	private Internacion internacion;
 	private PracticaMedica practicaMedica;
 	private Veterinario veterinario;
-	
-
-	
-	
 
 }
