@@ -22,7 +22,7 @@ public class Animal {
 		return nombre;
 	}
 	
-	public boolean getCastrado(){
+	public Boolean getCastrado(){
 		return castrado;
 	}
 
