@@ -1,37 +1,38 @@
 package edu.udc.lapii.veterinaria;
 
 public class Veterinario {
-	private String Nombre;
-	private String Apellido;
-	private int Matricula;
-	private int NCelular;
 	
-	
-	public Veterinario(String nombre, String apellido, int matricula, int nCelular) {
-		setNombre(nombre);
-		setApellido(apellido); 
-		setMatricula(matricula);
-		setNCelular(nCelular);
-	}
-
+	private String nombre;
+	private String apellido;
+	private int matricula;
+	private String telefono;
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		nombre = nombre;
 	}
 
 
 	public void setApellido(String apellido) {
-		Apellido = apellido;
+		apellido = apellido;
 	}
 
 
 	public void setMatricula(int matricula) {
-		Matricula = matricula;
+		matricula = matricula;
 	}
 
 
-	public void setNCelular(int nCelular) {
-		NCelular = nCelular;
+	public void setTelefono(String telefono) {
+		//Verificar si es valido
+		boolean error = false;
+		error = error || telefono.length() != 12;
+		error = error || ! telefono.matches("^0\\d{2,4}-\\d{6,8}$");
+		if (error) {
+			//Lanzar error si no es valido
+			System.out.println("Malo");
+			return;
+		}
+		this.telefono = telefono;
 	}
 	
 }
