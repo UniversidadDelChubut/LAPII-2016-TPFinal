@@ -22,7 +22,9 @@ public class Animal {
 		return nombre;
 	}
 	
-	//Ver historiaClinita
+	public boolean getCastrado(){
+		return castrado;
+	}
 
 	public String getColor(){
 		return color;
