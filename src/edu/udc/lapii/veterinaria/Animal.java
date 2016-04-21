@@ -17,6 +17,13 @@ public class Animal {
 	private Especie especie;
 	private Propietario propietario;
 	
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
 	//Ver historiaClinita
+
+
 }
 
