@@ -2,8 +2,11 @@ package edu.udc.lapii.veterinaria;
 
 public class Propietario {
 
+	private String nombre;
+	private String apellido;
 	private String telefono;
-	
+	private Domicilio dominiclio;
+	private Localidad localidad;
 	
 	public void setTelefono(String telefono) {
 		//Verificar si es valido
