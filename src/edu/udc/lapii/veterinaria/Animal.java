@@ -23,7 +23,7 @@ public class Animal {
 	}
 	
 	//Ver historiaClinita
-	//metodo getColor
+
 	public String getColor(){
 		return color;
 	}
