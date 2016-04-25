@@ -8,17 +8,17 @@ public class Veterinario {
 	private String telefono;
 
 	public void setNombre(String nombre) {
-		nombre = nombre;
+		this.nombre = nombre;
 	}
 
 
 	public void setApellido(String apellido) {
-		apellido = apellido;
+		this.apellido = apellido;
 	}
 
 
 	public void setMatricula(int matricula) {
-		matricula = matricula;
+		this.matricula = matricula;
 	}
 
 
@@ -34,5 +34,27 @@ public class Veterinario {
 		}
 		this.telefono = telefono;
 	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public int getMatricula() {
+		return matricula;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+	
+	
 	
 }

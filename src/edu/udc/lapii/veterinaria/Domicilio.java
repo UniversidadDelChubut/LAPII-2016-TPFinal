@@ -8,6 +8,7 @@ public class Domicilio {
 	public String getCalle() {
 		return calle;
 	}
+	
 	public int getNumeroCasa() {
 		return numeroCasa;
 	}
@@ -15,6 +16,7 @@ public class Domicilio {
 	public void setCalle(String calle) {
 		this.calle = calle;
 	}
+	
 	public void setNumeroCasa(int numeroCasa) {
 		this.numeroCasa = numeroCasa;
 	}

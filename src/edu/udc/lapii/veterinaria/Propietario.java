@@ -24,4 +24,38 @@ public class Propietario {
 	public String getTelefono() {
 		return telefono;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public Domicilio getDominiclio() {
+		return dominiclio;
+	}
+
+	public void setDominiclio(Domicilio dominiclio) {
+		this.dominiclio = dominiclio;
+	}
+
+	public Localidad getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(Localidad localidad) {
+		this.localidad = localidad;
+	}
+	
+	
 }
