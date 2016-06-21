@@ -1,0 +1,40 @@
+package interfazGrafica.Test;
+
+import interfazGrafica.Registro.JPanelRegistro;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import edu.udc.lapii.veterinaria.HistoriaClinica;
+
+
+public class TestRegistro extends JPanel{
+	
+	private static final long serialVersionUID = 1L;
+
+	private static void createAndShowGUI() {
+
+        JFrame frame = new JFrame("Registro");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        HistoriaClinica hc = new HistoriaClinica("pepe", "ASDF56ASD");
+        
+        JPanelRegistro newContentPane = new JPanelRegistro(hc, frame);
+        
+        newContentPane.setOpaque(true);
+        frame.setContentPane(newContentPane);
+
+        frame.pack();
+        frame.setVisible(true);
+        frame.setResizable(false);
+    }
+    
+    public static void main(String[] args) {
+
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+    }
+}
