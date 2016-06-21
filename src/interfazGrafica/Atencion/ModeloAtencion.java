@@ -60,7 +60,7 @@ public class ModeloAtencion implements TableModel{
 			case 0: return atencion.getNumeroAtencion();
 			case 1: return atencion.getTipo();
 			case 2: return atencion.getFechaDeAtencion();
-			case 3: return atencion.getVeterinario().getNombre();
+			case 3: return atencion.getVeterinario().getNombre()+" "+atencion.getVeterinario().getApellido();
 			default: return null;
 		}
 	}

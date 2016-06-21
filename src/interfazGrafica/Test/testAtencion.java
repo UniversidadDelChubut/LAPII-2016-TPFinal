@@ -31,35 +31,47 @@ public class testAtencion extends JFrame {
        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
         
         /*Creo un listado de vacunas*/
-        Vacuna ninguna=new Vacuna("", "");
-        Vacuna triple=new Vacuna("triple", "se aplica en perros a las 6 semanas de vida");
-        Vacuna parvovirus=new Vacuna("parvovirus","se aplica en perros a 8 semanas de vida");
-        Vacuna rabia=new Vacuna("rabia","se aplica a 16 semanas de vida");
-        Vacuna rinotraquetitis=new Vacuna("rinotraquetitis","se aplica en gatos");
-        Vacuna bonipra1=new Vacuna("bonipra1","se aplica en aves con sintomas de bronquitis");
-        Vacuna viruela=new Vacuna("viruela","se aplica en aves a los 60 dias de vida");
+        Vacuna v1=new Vacuna("", "");
+        Vacuna v2=new Vacuna("Triple", "se aplica en perros a las 6 semanas de vida");
+        Vacuna v3=new Vacuna("Parvovirus","se aplica en perros a 8 semanas de vida");
+        Vacuna v4=new Vacuna("Rabia","se aplica a 16 semanas de vida");
+        Vacuna v5=new Vacuna("Rinotraquetitis","se aplica en gatos");
+        Vacuna v6=new Vacuna("Bonipra 1","se aplica en aves con sintomas de bronquitis");
+        Vacuna v7=new Vacuna("Adenovirus tipo 2","se aplica en perros(cachorros)a las 9 semanas de vida");
+        Vacuna v8=new Vacuna("Viruela","se aplica en aves a los 60 dias de vida");
+        Vacuna v9=new Vacuna("Coronavirus","se aplica en perros a las 10 semanas de vida(opcional)");
+        Vacuna v10=new Vacuna("Brucelosis Bovina","Vacuna Preventiva del aborto por brucelosis,se aplica en hembras bovinas");
+         
        
         /*Inserto todas las vacunas en una lista*/
         LinkedList<Vacuna> misVacunas=new LinkedList<Vacuna>();
-        misVacunas.add(ninguna);
-        misVacunas.add(triple);
-        misVacunas.add(parvovirus);
-        misVacunas.add(rabia);
-        misVacunas.add(rinotraquetitis);
-        misVacunas.add(bonipra1);
-        misVacunas.add(viruela);
+        misVacunas.add(v1);
+        misVacunas.add(v2);
+        misVacunas.add(v3);
+        misVacunas.add(v4);
+        misVacunas.add(v5);
+        misVacunas.add(v6);
+        misVacunas.add(v7);
+        misVacunas.add(v8);
+        misVacunas.add(v9);
+        misVacunas.add(v10);
+        
         /*Creo un listado de veterinarios*/
-        Veterinario Dr_Gonzalez=new Veterinario("Oscar", "Gonzales", 34, "2804-541211");
-        Veterinario Dra_Suarez=new Veterinario("juan", "gomez", 501, "2945-582555");
-        /*Veterinario Dr_Perez=new Veterinario("Juan Perez");
-        Veterinario Dra_Samuel=new Veterinario("Florencia Samuel");
+        Veterinario vet1=new Veterinario("Oscar", "Gonzales", 34, "2804-541211");
+        Veterinario vet2=new Veterinario("Juan", "Gomez", 501, "2945-582555");
+        Veterinario vet3=new Veterinario("Agustina", "Saavedra", 703, "2804-953317");
+        Veterinario vet4=new Veterinario("Florencia", "Amparo", 47, "2804-634429");
+        Veterinario vet5=new Veterinario("Federico", "Sosa", 1708, "2804-762213");
+        Veterinario vet6=new Veterinario("Helena", "Medina", 910, "2804-052318");
+         
         /*Inserto los veterinarios en una lista*/
         LinkedList<Veterinario> misVeterinarios=new LinkedList<Veterinario>();
-        misVeterinarios.add(Dr_Gonzalez);
-        misVeterinarios.add(Dra_Suarez);
-        /*misVeterinarios.add(Dr_Perez);
-        misVeterinarios.add(Dra_Samuel);*/
-        
+        misVeterinarios.add(vet1);
+        misVeterinarios.add(vet2);
+        misVeterinarios.add(vet3);
+        misVeterinarios.add(vet4);
+        misVeterinarios.add(vet5);
+        misVeterinarios.add(vet6);
         
         
         

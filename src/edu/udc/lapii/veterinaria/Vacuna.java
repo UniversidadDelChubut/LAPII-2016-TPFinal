@@ -23,7 +23,7 @@ public class Vacuna {
 	@Override
 	public String toString() {
 		if(descripcion==""){
-			this.tipo="ninguna";
+			this.tipo="Ninguna";
 		}
 		return this.tipo;
 	}
