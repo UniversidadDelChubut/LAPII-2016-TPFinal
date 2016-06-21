@@ -1,26 +1,23 @@
 package edu.udc.lapii.veterinaria;
 
-import java.util.Date;
-
 public class Vacunacion {
 
-	private Date fechaDeVacunacion;
-	private Vacunas vacunas;
 	
-	public Date getFechaDeVacunacion() {
-		return fechaDeVacunacion;
+	private Vacuna vacuna;
+	
+	
+
+	public Vacunacion(Vacuna vacuna) {
+		super();
+		this.vacuna = vacuna;
+	}
+
+	public Vacuna getVacuna() {
+		return vacuna;
 	}
 	
-	public void setFechaDeVacunacion(Date fechaDeVacunacion) {
-		this.fechaDeVacunacion = fechaDeVacunacion;
-	}
-	
-	public Vacunas getVacunas() {
-		return vacunas;
-	}
-	
-	public void setVacunas(Vacunas vacunas) {
-		this.vacunas = vacunas;
+	public void setVacuna(Vacuna vacuna) {
+		this.vacuna = vacuna;
 	}
 	
 	

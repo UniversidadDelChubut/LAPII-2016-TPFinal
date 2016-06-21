@@ -6,10 +6,10 @@ public class Internacion extends Atencion {
 	
 	private Date fechaDeAlta;
 
-	public Internacion(Date fechaDeAtencion, String dianostico, String observaciones, Ambulatorio ambulatorio,
-			Domiciliaria domiciliaria, Internacion internacion, PracticaMedica practicaMedica, Veterinario veterinario,
+	public Internacion(int numeroAtencion,Date fechaDeAtencion, String dianostico, String observaciones
+			, PracticaMedica practicaMedica, Veterinario veterinario,
 			Vacunacion vacunacion) {
-		super(fechaDeAtencion, dianostico, observaciones, ambulatorio, domiciliaria, internacion, practicaMedica, veterinario,
+		super(numeroAtencion,fechaDeAtencion, dianostico, observaciones,  practicaMedica, veterinario,
 				vacunacion);
 
 	}
@@ -22,7 +22,16 @@ public class Internacion extends Atencion {
 		this.fechaDeAlta = fechaDeAlta;
 	}
 
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return "Internacion";
+	}
 
+	@Override
+	public String toString() {
+		return "Internacion";
+	}
 	
 	
 }

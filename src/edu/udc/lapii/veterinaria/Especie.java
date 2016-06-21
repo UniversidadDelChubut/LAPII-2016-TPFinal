@@ -1,6 +1,6 @@
 package edu.udc.lapii.veterinaria;
 
-public class Especie {
+public class Especie{
 	
 	private String nombre;
 

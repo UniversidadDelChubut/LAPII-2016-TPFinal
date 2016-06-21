@@ -1,11 +1,22 @@
 package edu.udc.lapii.veterinaria;
 
-import java.util.Date;
 
 public class PracticaMedica {
 	private String tipo;
-	private Atencion atencion;
-	private Date fecha;
+	
+	private String descripcion;
+	
+	
+	public PracticaMedica(String tipo, String descripcion) {
+		super();
+		this.tipo = tipo;
+		
+		this.descripcion = descripcion;
+	}
+
+	public String getDescripcion(){
+		return descripcion;
+	}
 	
 	public String getTipo() {
 		return tipo;
@@ -15,21 +26,7 @@ public class PracticaMedica {
 		this.tipo = tipo;
 	}
 	
-	public Atencion getAtencion() {
-		return atencion;
-	}
 	
-	public void setAtencion(Atencion atencion) {
-		this.atencion = atencion;
-	}
-	
-	public Date getFecha() {
-		return fecha;
-	}
-	
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
 	
 	
 }

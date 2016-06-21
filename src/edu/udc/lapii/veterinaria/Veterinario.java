@@ -7,6 +7,18 @@ public class Veterinario {
 	private int matricula;
 	private String telefono;
 
+	
+	
+	
+	public Veterinario(String nombre, String apellido, int matricula, String telefono) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.matricula = matricula;
+		this.telefono = telefono;
+	}
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -55,6 +67,10 @@ public class Veterinario {
 		return telefono;
 	}
 	
+	@Override
+	public String toString() {
+		return this.nombre+" "+this.apellido;
+	}
 	
 	
 }

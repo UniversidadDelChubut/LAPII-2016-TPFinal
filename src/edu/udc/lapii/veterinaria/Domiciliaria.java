@@ -6,10 +6,10 @@ public class Domiciliaria extends Atencion{
 	
 	private String donde;
 	
-	public Domiciliaria(Date fechaDeAtencion, String dianostico, String observaciones, Ambulatorio ambulatorio,
-			Domiciliaria domiciliaria, Internacion internacion, PracticaMedica practicaMedica, Veterinario veterinario,
+	public Domiciliaria(int numeroAtencion,Date fechaDeAtencion, String dianostico, String observaciones,
+			 PracticaMedica practicaMedica, Veterinario veterinario,
 			Vacunacion vacunacion) {
-		super(fechaDeAtencion, dianostico, observaciones, ambulatorio, domiciliaria, internacion, practicaMedica, veterinario,
+		super(numeroAtencion,fechaDeAtencion, dianostico, observaciones,  practicaMedica, veterinario,
 				vacunacion);
 	}
 	
@@ -20,5 +20,20 @@ public class Domiciliaria extends Atencion{
 	public void setDonde(String donde) {
 		this.donde = donde;
 	}
+
+	@Override
+	public String getTipo() {
+		// TODO Auto-generated method stub
+		return "Domiciliaria";
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Domiciliaria";
+	}
+
+	
+
 
 }
