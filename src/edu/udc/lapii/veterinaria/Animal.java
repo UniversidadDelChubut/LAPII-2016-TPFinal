@@ -1,6 +1,5 @@
 package edu.udc.lapii.veterinaria;
 
-import java.awt.Image;
 import java.util.Date;
 
 public class Animal {
@@ -10,13 +9,31 @@ public class Animal {
 	private String matricula;
 	private String municipioMatricula;
 	private String color;
-	private Image foto;
-	private Boolean castrado;
+	private String foto;
+	private boolean castrado;
 	private boolean vive;
 	private Raza raza;
 	private Especie especie;
 	private Propietario propietario;
 	
+	public Animal(String nombre, Date fechaNacimiento, boolean fechaNacimientoConfirmada, String matricula,
+			String municipioMatricula, String color, String foto, boolean castrado, boolean vive, Raza raza,
+			Especie especie, Propietario propietario) {
+		super();
+		this.nombre = nombre;
+		this.fechaNacimiento = fechaNacimiento;
+		this.fechaNacimientoConfirmada = fechaNacimientoConfirmada;
+		this.matricula = matricula;
+		this.municipioMatricula = municipioMatricula;
+		this.color = color;
+		this.foto = foto;
+		this.castrado = castrado;
+		this.vive = vive;
+		this.raza = raza;
+		this.especie = especie;
+		this.propietario = propietario;
+	}
+
 	//Metodos Getters y Setters de la clase animal//
 	
 	public String getNombre() {
@@ -67,11 +84,11 @@ public class Animal {
 		this.color = color;
 	}
 	
-	public Image getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 	
-	public void setFoto(Image foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 	

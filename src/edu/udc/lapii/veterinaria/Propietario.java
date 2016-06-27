@@ -8,6 +8,17 @@ public class Propietario {
 	private Domicilio dominiclio;
 	private Localidad localidad;
 	
+	
+	
+	public Propietario(String nombre, String apellido, String telefono, Domicilio dominiclio, Localidad localidad) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.dominiclio = dominiclio;
+		this.localidad = localidad;
+	}
+
 	public void setTelefono(String telefono) {
 		//Verificar si es valido
 		boolean error = false;

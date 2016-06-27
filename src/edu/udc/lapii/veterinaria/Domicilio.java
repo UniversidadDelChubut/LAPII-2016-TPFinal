@@ -5,6 +5,14 @@ public class Domicilio {
 	private String calle;
 	private int numeroCasa;
 	
+	
+	
+	public Domicilio(String calle, int numeroCasa) {
+		super();
+		this.calle = calle;
+		this.numeroCasa = numeroCasa;
+	}
+
 	public String getCalle() {
 		return calle;
 	}

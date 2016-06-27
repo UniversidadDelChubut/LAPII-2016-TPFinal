@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import javax.swing.*;
 
 import edu.udc.lapii.veterinaria.Atencion;
 

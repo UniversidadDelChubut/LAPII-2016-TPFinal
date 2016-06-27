@@ -4,7 +4,15 @@ public class Raza {
 	
 	private Especie especie;
 	private String nombre;
+	
+	
 		
+	public Raza(Especie especie, String nombre) {
+		super();
+		this.especie = especie;
+		this.nombre = nombre;
+	}
+
 	public Especie getEspecie() {
 		return especie;
 	}
