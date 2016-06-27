@@ -70,7 +70,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		JPanel panelBotones=new JPanel(new FlowLayout());
 		
 		
-		//Establezco el tamaño de vista por defecto de las tablas//
+		//Establezco el tamaï¿½o de vista por defecto de las tablas//
 		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
 		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 190));
 		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,190));
@@ -97,7 +97,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		JScrollPane sp3 = new JScrollPane(tablaVacuna);
 		panelTablas.add(sp3,BorderLayout.EAST);
 		
-		//Añado botones al panel "panelBotones"//
+		//Aï¿½ado botones al panel "panelBotones"//
 		
 		panelBotones.add(botonNuevo,BorderLayout.EAST);
 		
@@ -124,7 +124,6 @@ public class AtencionVentana extends JPanel implements ActionListener{
 
 
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand().equals("Nuevo")){

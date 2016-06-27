@@ -6,8 +6,14 @@ import java.util.LinkedList;
 import javax.swing.JFrame;
 
 import edu.udc.lapii.veterinaria.Ambulatorio;
+import edu.udc.lapii.veterinaria.Animal;
+import edu.udc.lapii.veterinaria.Domicilio;
+import edu.udc.lapii.veterinaria.Especie;
 import edu.udc.lapii.veterinaria.HistoriaClinica;
+import edu.udc.lapii.veterinaria.Localidad;
 import edu.udc.lapii.veterinaria.PracticaMedica;
+import edu.udc.lapii.veterinaria.Propietario;
+import edu.udc.lapii.veterinaria.Raza;
 import edu.udc.lapii.veterinaria.Vacuna;
 import edu.udc.lapii.veterinaria.Vacunacion;
 import edu.udc.lapii.veterinaria.Veterinario;
@@ -20,7 +26,16 @@ public class testAtencion extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //Creo una historia clinica//
-        HistoriaClinica hc = new HistoriaClinica("pepe", "ASD123");
+		Domicilio domicilio1 = new Domicilio("25 de mayo", 123);
+		Localidad localidad1 = new Localidad("Trelew");
+       Especie especie = new Especie("Canino");
+       Propietario propietario = new Propietario("Juan", "Perez", "2804405500", domicilio1, localidad1);
+       
+        Animal nuevoAnimal = new Animal("Roco", new Date(),
+    			false,  "JAS456",
+    			"Trelew", "Colorado", true,
+    			new Raza(especie, "Desconocida"), especie, propietario);
+        HistoriaClinica hc = nuevoAnimal.getHistoriaClinica();
         Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
         Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
         Vacunacion vacunacion = new Vacunacion(vacuna);
@@ -80,7 +95,7 @@ public class testAtencion extends JFrame {
         
         AtencionVentana atv = new AtencionVentana(hc,misVacunas,misVeterinarios);
        
-        //La añado al frame//
+        //La aï¿½ado al frame//
         frame.getContentPane().add(atv);
         frame.pack();
         frame.setVisible(true);

@@ -38,7 +38,7 @@ public class FormHistoriaClinica extends JFrame {
 	
 	public static void main(String[] args) {
 		
-		PruebaPasajeMatricula matricula = new PruebaPasajeMatricula();
+		final PruebaPasajeMatricula matricula = new PruebaPasajeMatricula();
 
 		
 		EventQueue.invokeLater(new Runnable() {

@@ -27,8 +27,8 @@ public class CargaDeAnimales {
 
 			fNac1 = new SimpleDateFormat("yyyy-MM-dd").parse("2014-06-03");
 			fNac2 = new SimpleDateFormat("yyyy-MM-dd").parse("2014-03-08");
-			Animal animal1 = new Animal("Rocky", fNac1, true, "123", "Rawson", "Negro", "perro2.jpg", true, false, raza1, especie1, propietario1);
-			Animal animal2 = new Animal("Luna", fNac2, true, "321", "Trelew", "Marron","perro1.jpg", true, false, raza1, especie1, propietario1);
+			Animal animal1 = new Animal("Rocky", fNac1, true, "123", "Rawson", "Negro", "perro2.jpg", false, raza1, especie1, propietario1);
+			Animal animal2 = new Animal("Luna", fNac2, true, "321", "Trelew", "Marron","perro1.jpg", false, raza1, especie1, propietario1);
 
 			animales.add(animal1);
 			animales.add(animal2);

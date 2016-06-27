@@ -15,9 +15,10 @@ public class Animal {
 	private Raza raza;
 	private Especie especie;
 	private Propietario propietario;
+	private HistoriaClinica historiaClinica;
 	
 	public Animal(String nombre, Date fechaNacimiento, boolean fechaNacimientoConfirmada, String matricula,
-			String municipioMatricula, String color, String foto, boolean castrado, boolean vive, Raza raza,
+			String municipioMatricula, String color, String foto, boolean castrado, Raza raza,
 			Especie especie, Propietario propietario) {
 		super();
 		this.nombre = nombre;
@@ -28,11 +29,33 @@ public class Animal {
 		this.color = color;
 		this.foto = foto;
 		this.castrado = castrado;
-		this.vive = vive;
+		this.vive = true;
 		this.raza = raza;
 		this.especie = especie;
 		this.propietario = propietario;
+		this.historiaClinica = new HistoriaClinica(this);
 	}
+	
+	
+	public Animal(String nombre, Date fechaNacimiento,
+			boolean fechaNacimientoConfirmada, String matricula,
+			String municipioMatricula, String color, boolean castrado,
+			Raza raza, Especie especie, Propietario propietario) {
+		super();
+		this.nombre = nombre;
+		this.fechaNacimiento = fechaNacimiento;
+		this.fechaNacimientoConfirmada = fechaNacimientoConfirmada;
+		this.matricula = matricula;
+		this.municipioMatricula = municipioMatricula;
+		this.color = color;
+		vive = true;
+		this.castrado = castrado;
+		this.raza = raza;
+		this.especie = especie;
+		this.propietario = propietario;
+		this.historiaClinica = new HistoriaClinica(this);
+	}
+
 
 	//Metodos Getters y Setters de la clase animal//
 	
@@ -132,6 +155,9 @@ public class Animal {
 		this.propietario = propietario;
 	}
 	
+	public HistoriaClinica getHistoriaClinica(){
+		return historiaClinica;
+	}
 	//Fin de los metodos Getters y Setters
 	
 

@@ -11,13 +11,12 @@ public class Ambulatorio extends Atencion {
 				vacunacion);
 	}
 
-	@Override
+
 	public String getTipo() {
 		// TODO Auto-generated method stub
 		return "Ambulatoria";
 	}
 	
-	@Override
 	public String toString() {
 		return "Ambulatoria";
 	}

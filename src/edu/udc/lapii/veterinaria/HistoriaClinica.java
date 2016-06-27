@@ -4,14 +4,12 @@ import java.util.LinkedList;
 
 
 public class HistoriaClinica {
-	String nombre;
-	String matricula;
-	LinkedList<Registro> registro = null;
-	LinkedList<Atencion> atenciones = null;
+	private Animal animal;
+	private LinkedList<Registro> registro = null;
+	private LinkedList<Atencion> atenciones = null;
 	
-	public HistoriaClinica( String nombre, String matricula) {
-		this.matricula = matricula;
-		this.nombre = nombre;
+	public HistoriaClinica( Animal animal) {
+		this.animal = animal;
 		this.registro = new LinkedList<Registro>();
 		this.atenciones = new LinkedList<Atencion>();
 	}
@@ -31,5 +29,9 @@ public class HistoriaClinica {
 
 	public LinkedList<Atencion> getAtencion() {
 	return this.atenciones;
+	}
+	
+	public Animal getAnimal(){
+		return animal;
 	}
 }
