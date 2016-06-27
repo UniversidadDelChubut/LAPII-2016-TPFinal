@@ -54,11 +54,11 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	
 	
 	//Constructor que por defecto se crean 2 JPanel//
-	public AtencionVentana(HistoriaClinica historiaClinica,LinkedList<Vacuna> listadoVacunas,LinkedList<Veterinario> listadoVeterinarios){
+	public AtencionVentana(HistoriaClinica historiaClinica,LinkedList<Vacuna> listadoVacunas){
 		//JPanel que va a contener tablas//
 		this.historiaClinica = historiaClinica;
 		this.listadoVacunas=listadoVacunas;
-		this.listadoVeterinarios=listadoVeterinarios;
+		this.listadoVeterinarios=Veterinario.getVeterinarios();
 		
 		
 		tablaAtencion = new JTable(new ModeloAtencion( historiaClinica.getAtencion()));

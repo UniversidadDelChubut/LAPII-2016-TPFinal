@@ -16,7 +16,7 @@ public class Propietario {
 		super();
 		setNombre(nombre);
 		setApellido(apellido);
-		setTelefono(telefono);
+		this.telefono=telefono;
 		setDomicilio(domicilio);
 		setLocalidad(localidad);
 	}

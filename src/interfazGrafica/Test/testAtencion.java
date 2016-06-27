@@ -79,7 +79,7 @@ public class testAtencion extends JFrame {
         Veterinario vet5=new Veterinario("Federico", "Sosa", 1708, "2804-762213");
         Veterinario vet6=new Veterinario("Helena", "Medina", 910, "2804-052318");
          
-        /*Inserto los veterinarios en una lista*/
+       /* Inserto los veterinarios en una lista
         LinkedList<Veterinario> misVeterinarios=new LinkedList<Veterinario>();
         misVeterinarios.add(vet1);
         misVeterinarios.add(vet2);
@@ -87,13 +87,13 @@ public class testAtencion extends JFrame {
         misVeterinarios.add(vet4);
         misVeterinarios.add(vet5);
         misVeterinarios.add(vet6);
-        
+        */
         
         
         
         hc.setAtencion(amb);
         
-        AtencionVentana atv = new AtencionVentana(hc,misVacunas,misVeterinarios);
+        AtencionVentana atv = new AtencionVentana(hc,misVacunas);
        
         //La a�ado al frame//
         frame.getContentPane().add(atv);
