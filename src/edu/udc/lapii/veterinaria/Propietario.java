@@ -5,18 +5,20 @@ public class Propietario {
 	private String nombre;
 	private String apellido;
 	private String telefono;
-	private Domicilio dominiclio;
+	private Domicilio domicilio;
 	private Localidad localidad;
 	
+	public Propietario(){
+		
+	}
 	
-	
-	public Propietario(String nombre, String apellido, String telefono, Domicilio dominiclio, Localidad localidad) {
+	public Propietario(String nombre, String apellido, String telefono, Domicilio domicilio, Localidad localidad) {
 		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.telefono = telefono;
-		this.dominiclio = dominiclio;
-		this.localidad = localidad;
+		setNombre(nombre);
+		setApellido(apellido);
+		setTelefono(telefono);
+		setDomicilio(domicilio);
+		setLocalidad(localidad);
 	}
 
 	public void setTelefono(String telefono) {
@@ -52,12 +54,12 @@ public class Propietario {
 		this.apellido = apellido;
 	}
 
-	public Domicilio getDominiclio() {
-		return dominiclio;
+	public Domicilio getDomicilio() {
+		return domicilio;
 	}
 
-	public void setDominiclio(Domicilio dominiclio) {
-		this.dominiclio = dominiclio;
+	public void setDomicilio(Domicilio dominiclio) {
+		this.domicilio = dominiclio;
 	}
 
 	public Localidad getLocalidad() {

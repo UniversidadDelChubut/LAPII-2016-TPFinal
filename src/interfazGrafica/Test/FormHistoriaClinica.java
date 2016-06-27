@@ -1,31 +1,21 @@
 package interfazGrafica.Test;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.util.LinkedList;
-import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 
 
 
 import javax.swing.JLabel;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Image;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
-import java.awt.Canvas;
 import javax.swing.JTabbedPane;
 import interfazGrafica.HistoriaClinica.*;
 
@@ -120,7 +110,7 @@ public class FormHistoriaClinica extends JFrame {
 						lblpropietario_1.setBounds(182, 190, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
-						JLabel lblDomicilio_1 = new JLabel(cargaDeAnimales.llenarDatos().get(i).getPropietario().getDominiclio().getCalle());
+						JLabel lblDomicilio_1 = new JLabel(cargaDeAnimales.llenarDatos().get(i).getPropietario().getDomicilio().getCalle());
 						
 						lblDomicilio_1.setBounds(182, 218, 106, 15);
 						contentPane.add(lblDomicilio_1);
