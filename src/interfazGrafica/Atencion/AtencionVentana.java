@@ -301,7 +301,8 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		    AtencionVentana.this.tablaAtencion.setVisible(true);
 		    AtencionVentana.this.tablaPracticaMedica.setVisible(true);
 		    AtencionVentana.this.tablaVacuna.setVisible(true);
-			}
+			
+		}
 		}
 		
 		

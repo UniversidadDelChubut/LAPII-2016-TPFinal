@@ -18,6 +18,7 @@ public class ListadoDeVacunas {
      Vacuna v9=new Vacuna("Coronavirus","se aplica en perros a las 10 semanas de vida(opcional)");
      Vacuna v10=new Vacuna("Brucelosis Bovina","Vacuna Preventiva del aborto por brucelosis,se aplica en hembras bovinas");
       
+
 	}
 	
 }

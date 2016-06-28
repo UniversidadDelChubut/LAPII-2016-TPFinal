@@ -87,7 +87,7 @@ public class Veterinario {
 	public static LinkedList<Veterinario> getVeterinarios(){
 		return veterinarios;
 	}
-
+	
 
 	@Override
 	public int hashCode() {

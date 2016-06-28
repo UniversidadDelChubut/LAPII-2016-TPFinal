@@ -169,8 +169,6 @@ public class Animal {
 	}
 	//Fin de los metodos Getters y Setters
 	
-
-	
 	
 	public static LinkedList<Animal> getAnimal() {	
 		return listaDeAnimales;
