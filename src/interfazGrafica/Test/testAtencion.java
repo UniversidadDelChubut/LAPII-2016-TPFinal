@@ -1,10 +1,12 @@
 package interfazGrafica.Test;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
 
+import cargaDeDatos.CargaDeAnimales;
 import edu.udc.lapii.veterinaria.Ambulatorio;
 import edu.udc.lapii.veterinaria.Animal;
 import edu.udc.lapii.veterinaria.Domicilio;
@@ -20,27 +22,23 @@ import edu.udc.lapii.veterinaria.Veterinario;
 import interfazGrafica.Atencion.AtencionVentana;
 
 public class testAtencion extends JFrame {
-	private static void mostrarVentana(){
+	private static void mostrarVentana() throws ParseException{
         //Creo un JFrame//
         JFrame frame = new JFrame("AtencionVentana");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ 
+        //cargo los datos de Carga de DAtos para ectuar las consultas
+        CargaDeAnimales.cargaAnimal();
+		
+		//llamo al animal
+		 HistoriaClinica hc = Animal.getAnimal().get(0).getHistoriaClinica();
+
+	        Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
+	        Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
+	        Vacunacion vacunacion = new Vacunacion(vacuna);
+	        PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh"); 
         
-        //Creo una historia clinica//
-		Domicilio domicilio1 = new Domicilio("25 de mayo", 123);
-		Localidad localidad1 = new Localidad("Trelew");
-       Especie especie = new Especie("Canino");
-       Propietario propietario = new Propietario("Juan", "Perez", "2804405500", domicilio1, localidad1);
-       
-        Animal nuevoAnimal = new Animal("Roco", new Date(),
-    			false,  "JAS456",
-    			"Trelew", "Colorado", true,
-    			new Raza(especie, "Desconocida"), especie, propietario);
-        HistoriaClinica hc = nuevoAnimal.getHistoriaClinica();
-        Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
-        Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
-        Vacunacion vacunacion = new Vacunacion(vacuna);
-        PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh");
-       
+        
         
         
        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
@@ -86,7 +84,7 @@ public class testAtencion extends JFrame {
         
         AtencionVentana atv = new AtencionVentana(hc,misVacunas);
        
-        //La añado al frame//
+        //La aï¿½ado al frame//
         frame.getContentPane().add(atv);
         frame.pack();
         frame.setVisible(true);
@@ -97,7 +95,12 @@ public class testAtencion extends JFrame {
 		
 	javax.swing.SwingUtilities.invokeLater(new Runnable(){
             public void run(){
-            	mostrarVentana();
+            	try {
+					mostrarVentana();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
 		
 		});	

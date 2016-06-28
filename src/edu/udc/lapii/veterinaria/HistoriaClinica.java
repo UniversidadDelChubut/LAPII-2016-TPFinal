@@ -24,7 +24,6 @@ public class HistoriaClinica {
 	
 	public void setAtencion(Atencion atencion) {
 		this.atenciones.add(atencion);
-		
 	}
 
 	public LinkedList<Atencion> getAtencion() {
