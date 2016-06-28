@@ -1,7 +1,10 @@
 package edu.udc.lapii.veterinaria;
 
+import java.util.LinkedList;
+
 public class Veterinario {
 	
+	static LinkedList<Veterinario> veterinarios;
 	private String nombre;
 	private String apellido;
 	private int matricula;
@@ -16,6 +19,11 @@ public class Veterinario {
 		this.apellido = apellido;
 		this.matricula = matricula;
 		this.telefono = telefono;
+		if(veterinarios==null){
+		veterinarios=new LinkedList<>();	
+		
+		}
+		veterinarios.add(this);
 	}
 
 
@@ -72,5 +80,7 @@ public class Veterinario {
 		return this.nombre+" "+this.apellido;
 	}
 	
-	
+	public static LinkedList<Veterinario> getVeterinarios(){
+		return veterinarios;
+	}
 }

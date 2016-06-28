@@ -1,8 +1,14 @@
 package edu.udc.lapii.veterinaria;
 
 import java.util.Date;
+import java.util.LinkedList;
 
 public class Animal {
+	
+	
+	public static LinkedList<Animal> listaDeAnimales = new LinkedList<Animal>();
+
+	
 	private String nombre;
 	private Date fechaNacimiento;
 	private boolean fechaNacimientoConfirmada;
@@ -34,6 +40,8 @@ public class Animal {
 		this.especie = especie;
 		this.propietario = propietario;
 		this.historiaClinica = new HistoriaClinica(this);
+		listaDeAnimales.add(this);
+	
 	}
 	
 	
@@ -54,6 +62,7 @@ public class Animal {
 		this.especie = especie;
 		this.propietario = propietario;
 		this.historiaClinica = new HistoriaClinica(this);
+		listaDeAnimales.add(this);
 	}
 
 
@@ -163,6 +172,9 @@ public class Animal {
 
 	
 	
+	public static LinkedList<Animal> getAnimal() {	
+		return listaDeAnimales;
+	}
 	
 	
 	
