@@ -9,6 +9,8 @@ import java.awt.GridBagLayout;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
@@ -23,6 +25,13 @@ import edu.udc.lapii.veterinaria.PracticaMedica;
 import edu.udc.lapii.veterinaria.Vacuna;
 import edu.udc.lapii.veterinaria.Vacunacion;
 import edu.udc.lapii.veterinaria.Veterinario;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 /*Clase que es un JPanel,que como atributos va a tener 3 tablas(tablaAtencion,tablaPracticasMedicas,tablaVacunas),y 2 botones
@@ -138,7 +147,6 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	
 	protected class CrearAtencion extends JPanel implements ActionListener {
 		
-		
 		JButton guardar;
 		JComboBox<Veterinario> veterinarios;
 		JComboBox<String> tipoAtencion;
@@ -248,7 +256,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			
+				
 			String tiat=(String) tipoAtencion.getSelectedItem();
 			Vacuna vac=(Vacuna) vacunas.getSelectedItem();
 			String tip=tipoPracticaMedica.getText();
@@ -263,25 +271,23 @@ public class AtencionVentana extends JPanel implements ActionListener{
 			
 			PracticaMedica practicaAux=new PracticaMedica(tip, desc);
 			
+			Date fechaAtencion=new Date();
+			
 			if(tiat.equals("Ambulatorio")){
-				Ambulatorio ambAux=new Ambulatorio(numeroAtencion, new Date(), diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
+				Ambulatorio ambAux=new Ambulatorio(numeroAtencion, fechaAtencion, diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
 				historiaClinica.setAtencion(ambAux);
 			
 			}
 			else if(tiat.equals("Internacion")){
-				Internacion intAux=new Internacion(numeroAtencion, new Date(), diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
+				Internacion intAux=new Internacion(numeroAtencion, fechaAtencion, diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
 				historiaClinica.setAtencion(intAux);
 			
 			}else{
 				
-				Domiciliaria domAux=new Domiciliaria(numeroAtencion, new Date(), diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
+				Domiciliaria domAux=new Domiciliaria(numeroAtencion, fechaAtencion, diagnostico.getText(), observaciones.getText(), practicaAux, (Veterinario) veterinarios.getSelectedItem(), vacunacionAux);
 				historiaClinica.setAtencion(domAux);
 			}
-
-					
-					
-					
-				
+			
 			
 			Window w = SwingUtilities.getWindowAncestor(this);
 		    w.setVisible(false);
@@ -294,16 +300,16 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		    AtencionVentana.this.tablaAtencion.setVisible(true);
 		    AtencionVentana.this.tablaPracticaMedica.setVisible(true);
 		    AtencionVentana.this.tablaVacuna.setVisible(true);
-		   
+			}
 		}
 		
 		
 	
-	}
-	
-	
-	
-	
 }
+	
+	
+	
+	
+
 
 
