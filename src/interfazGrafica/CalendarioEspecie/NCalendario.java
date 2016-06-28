@@ -3,7 +3,7 @@ package interfazGrafica.CalendarioEspecie;
 import java.awt.BorderLayout;
 
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
+
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -70,7 +70,7 @@ public int getColumnCount() {
 }
 @Override
 public Object getValueAt(int rowIndex, int columnIndex) {
-	Animal animal = NCalendario.this.individuo.get(rowIndex);
+	Animal animal = NCalendario.this.individuo;
 	switch (columnIndex) {
 		case 0: return animal.getVacunas()[0];
 		case 1: return animal.getVacunas()[1];
@@ -103,56 +103,25 @@ public void removeTableModelListener(TableModelListener arg0) {
 }
 @Override
 public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-	Animal alumno = NCalendario.this.individuo.get(rowIndex);
+	Animal alumno = NCalendario.this.individuo;
 	if (columnIndex == 0){
-	String[] string = (String[])aValue;
-	alumno.setVacunas(string);
+	String string = (String)aValue;
+	alumno.set(rowIndex, columnIndex, string);
 	} else if (columnIndex == 1){
-	String[] string = (String[])aValue;
-	alumno.setVacunas(string);
+	String string = (String)aValue;
+	alumno.set(rowIndex, columnIndex, string);
 	} else if (columnIndex == 2){
-	String[] string = (String[])aValue;
-	alumno.setVacunas(string);
+	String string = (String)aValue;
+	alumno.set(rowIndex, columnIndex, string);
 	} else if (columnIndex == 3){
-	String[] string = (String[])aValue;
-	alumno.setVacunas(string);
+	String string = (String)aValue;
+	alumno.set(rowIndex, columnIndex, string);
 	} if (columnIndex == 4) {
-	String[] string = (String[])aValue;
-	alumno.setVacunas(string);
+	String string = (String)aValue;
+	alumno.set(rowIndex, columnIndex, string);
 	}
 	return;
 	
 }
-/*
-public void actionPerformed (ActionEvent ev) {
-	  
-      String texto = null;
-      
-      //Recorre la tabla de la misma manera que se recorre una matriz
-      for (int a=0;NCalendario.this.individuo.getRowCount(); a++)
-        for (int b=0;NCalendario.this.individuo.getColumnCount(); b++) {
-          
-          //Obtiene el valor x,y y el nombre de la columna
-          texto += NCalendario.this.individuo.getColumnName(b) +  NCalendario.this.individuo.getValueAt(a,b);
-        }
- }
-*/
-/*
-public static void Crear() {
-    //Create and set up the window.
-	JFrame frame = new JFrame("calendario");
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setContentPane(this);
-    frame.pack();
-    frame.setVisible(true);
-}
-public static void main(String[] args) {
-	SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-        	NCalendario.Crear();
-        }
-    });
-}
-*/
 }
 

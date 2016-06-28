@@ -41,9 +41,20 @@ public class Animal {
 		return Vacunas;
 	}
 
-	public Animal get(int rowIndex) {
-	
-		return null;
+	public Object[][] set(int rowIndex,int columnIndex,String string) {
+			for (int i = 0; i <= columnIndex; i++) {
+				for (int j = 0; j <= rowIndex; j++) {
+					if (i == columnIndex && j == columnIndex ){
+						Fechas[j][i] = string;
+					}
+				}
+			}
+			return Fechas;
+	}
+
+	public String[] get(int rowIndex) {
+		// TODO Auto-generated method stub
+		return Animal.this.Vacunas;
 	}
 	
 	

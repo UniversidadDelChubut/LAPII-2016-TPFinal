@@ -8,7 +8,7 @@ public class Principal {
 		
 		Especie especie = new Especie("Canina",null);
 		Raza raza = new Raza(especie,"Golden");
-		String[] vacunas={"Edad","Parvovirosis ","Moquillo ","Polivalentes ", "Rabia ",};
+		String[] vacunas={"Edad","Parvovirosis ","Moquillo ","Polivalentes ", "Rabia "};
 		Object[][] fechas ={ 
 				{"1 mes ",new String(),new String(),new String(),new String()},
 				{"2 meses",new String(),new String(),new String(),new String()},
