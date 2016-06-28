@@ -21,6 +21,7 @@ import edu.udc.lapii.veterinaria.Vacuna;
 import edu.udc.lapii.veterinaria.Vacunacion;
 import edu.udc.lapii.veterinaria.Veterinario;
 import interfazGrafica.Atencion.AtencionVentana;
+import interfazGrafica.HistoriaClinica.objetoRecibidoAnimalHC;
 import interfazGrafica.Test.*;
 
 public class testAtencion extends JFrame {
@@ -32,12 +33,11 @@ public class testAtencion extends JFrame {
 		ListadoDeVacunas.listadoDeVacunas();
 		
 
-		//llamo al animal
+		//llamo al objeto animal
+		objetoRecibidoAnimalHC.SetRecibidosAnimal();
 		
-		HistoriaClinica hc = Animal.getAnimal().get(0).getHistoriaClinica();
+		HistoriaClinica hc = objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica();
 		
-		//HistoriaClinica hc = FormHistoriaClinica.getAnimal().getHistoriaClinica();
-
 		 
 		 //lo que se muestra en las tablas
 	        Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");

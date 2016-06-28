@@ -51,7 +51,7 @@ public class FormHistoriaClinica extends JFrame {
 				//Incluir esta ventana en el proyecto veterinara que estan trabajando los compañeros
 				//Instanciar los tabs de aucerdo a lo programado por los compañeros
 				
-		objetoRecibidoAnimalHC.recibidosAnimal();
+		objetoRecibidoAnimalHC.SetRecibidosAnimal();
 
 	
 				setTitle("HISTORIA CLINICA");//titulo de la ventana
@@ -85,41 +85,41 @@ public class FormHistoriaClinica extends JFrame {
 				
 				
 						
-						JLabel lblnombreAnimal_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getNombre());
+						JLabel lblnombreAnimal_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getNombre());
 						lblnombreAnimal_1.setBounds(182, 79, 60, 15);
 						contentPane.add(lblnombreAnimal_1);
 						
 						
 						@SuppressWarnings("deprecation")
-						JLabel lbledad_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.MostrarAnimal().getFechaNacimiento().getYear()));
+						JLabel lbledad_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getFechaNacimiento().getYear()));
 						lbledad_1.setBounds(182, 107, 60, 15);
 						contentPane.add(lbledad_1);
 						
 						
-						JLabel lblespecie_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getEspecie().getNombre());
+						JLabel lblespecie_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getEspecie().getNombre());
 						lblespecie_1.setBounds(182, 134, 60, 15);
 						contentPane.add(lblespecie_1);
 						
-						JLabel lblRaza_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getRaza().getNombre());
+						JLabel lblRaza_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getRaza().getNombre());
 						lblRaza_1.setBounds(182, 162, 60, 15);
 						contentPane.add(lblRaza_1);
 						
-						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getNombre());
+						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getNombre());
 						lblpropietario_1.setBounds(182, 190, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
-						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getDomicilio().getCalle());
+						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle());
 						
 						lblDomicilio_1.setBounds(182, 218, 106, 15);
 						contentPane.add(lblDomicilio_1);
 						
-						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getTelefono()));
+						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getTelefono()));
 						lblTelefono_1.setBounds(182, 246, 106, 15);
 						contentPane.add(lblTelefono_1);
 						
 						
 						
-						ImageIcon imageIcon = new ImageIcon(new ImageIcon(objetoRecibidoAnimalHC.MostrarAnimal().getFoto()).getImage().getScaledInstance(280, 240, Image.SCALE_AREA_AVERAGING));
+						ImageIcon imageIcon = new ImageIcon(new ImageIcon(objetoRecibidoAnimalHC.GetsAnimal().getFoto()).getImage().getScaledInstance(280, 240, Image.SCALE_AREA_AVERAGING));
 
 						
 						

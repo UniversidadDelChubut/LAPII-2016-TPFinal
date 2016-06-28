@@ -10,9 +10,9 @@ public class prueba {
 
 		public static void main(String[] args) throws ParseException {
 			
-			objetoRecibidoAnimalHC.recibidosAnimal();
+			objetoRecibidoAnimalHC.GetsAnimal();
 			
-			System.out.println("-------!-"+objetoRecibidoAnimalHC.MostrarAnimal().getMatricula());
+			System.out.println("-------!-"+objetoRecibidoAnimalHC.GetsAnimal().getMatricula());
 			
 			
 		}

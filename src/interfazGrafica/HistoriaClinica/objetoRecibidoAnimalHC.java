@@ -12,7 +12,7 @@ public class objetoRecibidoAnimalHC {
 	private static Animal ObjetAnimal;
 	
 	
-	public static  void recibidosAnimal() throws ParseException {	
+	public static  void SetRecibidosAnimal() throws ParseException {	
 		String matricula = new PruebaPasajeMatricula().getMatricula();
 		
 		CargaDeAnimales.cargaAnimal();
@@ -26,7 +26,7 @@ public class objetoRecibidoAnimalHC {
 		}
 	}
 	
-	public static Animal MostrarAnimal(){
+	public static Animal GetsAnimal(){
 		
 		return ObjetAnimal;
 	}
