@@ -25,22 +25,18 @@ import edu.udc.lapii.veterinaria.*;
 
 public class FormHistoriaClinica extends JFrame {
 	
-
-	private static Animal ObjetAnimal = null;
 	
 	private JPanel contentPane;
-
-
 	
 	public static void main(String[] args) {
 		
-		final PruebaPasajeMatricula matricula = new PruebaPasajeMatricula();
+//		final PruebaPasajeMatricula matricula = new PruebaPasajeMatricula();
 
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {					
-					FormHistoriaClinica frame = new FormHistoriaClinica(matricula.getMatricula());
+					FormHistoriaClinica frame = new FormHistoriaClinica();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,14 +45,14 @@ public class FormHistoriaClinica extends JFrame {
 		});
 	}
 
-	public FormHistoriaClinica(String Matricula) throws ParseException {
+	public FormHistoriaClinica() throws ParseException {
 				//Poner nombre mas significativo
 				//Hacer que el constructor reciba una instancia de animal
 				//Incluir esta ventana en el proyecto veterinara que estan trabajando los compañeros
 				//Instanciar los tabs de aucerdo a lo programado por los compañeros
 				
-		
-		CargaDeAnimales.cargaAnimal();
+		objetoRecibidoAnimalHC.recibidosAnimal();
+
 	
 				setTitle("HISTORIA CLINICA");//titulo de la ventana
 				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //hace click en x y se cierrra
@@ -88,55 +84,42 @@ public class FormHistoriaClinica extends JFrame {
 				*/
 				
 				
-				
-
-				
-				for (int i = 0; i < Animal.getAnimal().size(); i++) {
-					
-					if (Animal.getAnimal().get(i).getMatricula().equals(Matricula)) {
-							
-						ObjetAnimal = Animal.getAnimal().get(i);
 						
-						System.out.println("su matricula es " + Matricula);
-						
-						
-						JLabel lblnombreAnimal_1 = new JLabel(Animal.getAnimal().get(i).getNombre());
+						JLabel lblnombreAnimal_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getNombre());
 						lblnombreAnimal_1.setBounds(182, 79, 60, 15);
 						contentPane.add(lblnombreAnimal_1);
 						
 						
-						
-						
 						@SuppressWarnings("deprecation")
-						JLabel lbledad_1 = new JLabel(String.valueOf(Animal.getAnimal().get(i).getFechaNacimiento().getYear()));
+						JLabel lbledad_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.MostrarAnimal().getFechaNacimiento().getYear()));
 						lbledad_1.setBounds(182, 107, 60, 15);
 						contentPane.add(lbledad_1);
 						
 						
-						JLabel lblespecie_1 = new JLabel(Animal.getAnimal().get(i).getEspecie().getNombre());
+						JLabel lblespecie_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getEspecie().getNombre());
 						lblespecie_1.setBounds(182, 134, 60, 15);
 						contentPane.add(lblespecie_1);
 						
-						JLabel lblRaza_1 = new JLabel(Animal.getAnimal().get(i).getRaza().getNombre());
+						JLabel lblRaza_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getRaza().getNombre());
 						lblRaza_1.setBounds(182, 162, 60, 15);
 						contentPane.add(lblRaza_1);
 						
-						JLabel lblpropietario_1 = new JLabel(Animal.getAnimal().get(i).getPropietario().getNombre());
+						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getNombre());
 						lblpropietario_1.setBounds(182, 190, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
-						JLabel lblDomicilio_1 = new JLabel(Animal.getAnimal().get(i).getPropietario().getDomicilio().getCalle());
+						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getDomicilio().getCalle());
 						
 						lblDomicilio_1.setBounds(182, 218, 106, 15);
 						contentPane.add(lblDomicilio_1);
 						
-						JLabel lblTelefono_1 = new JLabel(String.valueOf(Animal.getAnimal().get(i).getPropietario().getTelefono()));
+						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.MostrarAnimal().getPropietario().getTelefono()));
 						lblTelefono_1.setBounds(182, 246, 106, 15);
 						contentPane.add(lblTelefono_1);
 						
 						
 						
-						ImageIcon imageIcon = new ImageIcon(new ImageIcon(Animal.getAnimal().get(i).getFoto()).getImage().getScaledInstance(280, 240, Image.SCALE_AREA_AVERAGING));
+						ImageIcon imageIcon = new ImageIcon(new ImageIcon(objetoRecibidoAnimalHC.MostrarAnimal().getFoto()).getImage().getScaledInstance(280, 240, Image.SCALE_AREA_AVERAGING));
 
 						
 						
@@ -146,10 +129,8 @@ public class FormHistoriaClinica extends JFrame {
 						contentPane.add(lblfoto);
 						lblfoto.setIcon(imageIcon);
 						
-								
-						
-					}
-				}				
+		
+			
 				/*En esta seccion mostramos todos lbls que es para identificar nombres edad etc.*/
 				
 				
@@ -218,13 +199,6 @@ public class FormHistoriaClinica extends JFrame {
 				
 				
 			}
-
-
-	public static Animal getAnimal() {	
-		
-		
-		return ObjetAnimal;
-	}		
 
 }
 
