@@ -23,7 +23,7 @@ import cargaDeDatos.*;
 import cargaDeDatos.CargaDeAnimales;
 import edu.udc.lapii.veterinaria.*;
 
-public class FormHistoriaClinica extends JFrame {
+public class TestHistoriaClinica extends JFrame {
 	
 
 	private JPanel contentPane;
@@ -38,7 +38,7 @@ public class FormHistoriaClinica extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {					
-					FormHistoriaClinica frame = new FormHistoriaClinica(matricula.getMatricula());
+					TestHistoriaClinica frame = new TestHistoriaClinica(matricula.getMatricula());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class FormHistoriaClinica extends JFrame {
 		});
 	}
 
-	public FormHistoriaClinica(String Matricula) throws ParseException {
+	public TestHistoriaClinica(String Matricula) throws ParseException {
 				//Poner nombre mas significativo
 				//Hacer que el constructor reciba una instancia de animal
 				//Incluir esta ventana en el proyecto veterinara que estan trabajando los compañeros
@@ -63,6 +63,7 @@ public class FormHistoriaClinica extends JFrame {
 				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));	//bode de la ventana
 				setContentPane(contentPane);						//
 				contentPane.setLayout(null);
+				
 				
 				
 				JLabel lblTituloHC = new JLabel("HISTORIA CLINICA DE LA VETERINARIA-UDC SRL");
@@ -190,6 +191,8 @@ public class FormHistoriaClinica extends JFrame {
 				 JPanel panel1=new JPanel();
 				 JLabel label1enPestania=new JLabel("Estas en el panel 1");
 			     panel1.add(label1enPestania);
+			     
+			     
 			    
 //			     panel1 = new PanelAtenciones(animal);
 			     
