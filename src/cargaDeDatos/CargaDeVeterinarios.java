@@ -15,7 +15,9 @@ public class CargaDeVeterinarios {
 	        Veterinario vet6=new Veterinario("Helena", "Medina", 910, "2804-052318");
 	         
 		
-		
+	        
+	        
+	        
 	}
 	
 	
