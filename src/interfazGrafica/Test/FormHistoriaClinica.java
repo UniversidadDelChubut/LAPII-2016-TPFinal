@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.text.ParseException;
+import java.util.LinkedList;
 import java.util.List;
 import java.awt.Font;
 import java.awt.Image;
@@ -20,12 +21,13 @@ import java.awt.Color;
 import javax.swing.JTabbedPane;
 import interfazGrafica.HistoriaClinica.*;
 import cargaDeDatos.*;
-import cargaDeDatos.CargaDeAnimales;
 import edu.udc.lapii.veterinaria.*;
 
-public class TestHistoriaClinica extends JFrame {
+public class FormHistoriaClinica extends JFrame {
 	
 
+	private static Animal ObjetAnimal = null;
+	
 	private JPanel contentPane;
 
 
@@ -38,7 +40,7 @@ public class TestHistoriaClinica extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {					
-					TestHistoriaClinica frame = new TestHistoriaClinica(matricula.getMatricula());
+					FormHistoriaClinica frame = new FormHistoriaClinica(matricula.getMatricula());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +49,7 @@ public class TestHistoriaClinica extends JFrame {
 		});
 	}
 
-	public TestHistoriaClinica(String Matricula) throws ParseException {
+	public FormHistoriaClinica(String Matricula) throws ParseException {
 				//Poner nombre mas significativo
 				//Hacer que el constructor reciba una instancia de animal
 				//Incluir esta ventana en el proyecto veterinara que estan trabajando los compañeros
@@ -63,7 +65,6 @@ public class TestHistoriaClinica extends JFrame {
 				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));	//bode de la ventana
 				setContentPane(contentPane);						//
 				contentPane.setLayout(null);
-				
 				
 				
 				JLabel lblTituloHC = new JLabel("HISTORIA CLINICA DE LA VETERINARIA-UDC SRL");
@@ -86,17 +87,17 @@ public class TestHistoriaClinica extends JFrame {
 				
 				*/
 				
+				
+				
 
 				
 				for (int i = 0; i < Animal.getAnimal().size(); i++) {
 					
 					if (Animal.getAnimal().get(i).getMatricula().equals(Matricula)) {
 							
-				
+						ObjetAnimal = Animal.getAnimal().get(i);
 						
 						System.out.println("su matricula es " + Matricula);
-						
-						
 						
 						
 						JLabel lblnombreAnimal_1 = new JLabel(Animal.getAnimal().get(i).getNombre());
@@ -149,7 +150,6 @@ public class TestHistoriaClinica extends JFrame {
 						
 					}
 				}				
-
 				/*En esta seccion mostramos todos lbls que es para identificar nombres edad etc.*/
 				
 				
@@ -191,8 +191,6 @@ public class TestHistoriaClinica extends JFrame {
 				 JPanel panel1=new JPanel();
 				 JLabel label1enPestania=new JLabel("Estas en el panel 1");
 			     panel1.add(label1enPestania);
-			     
-			     
 			    
 //			     panel1 = new PanelAtenciones(animal);
 			     
@@ -217,8 +215,17 @@ public class TestHistoriaClinica extends JFrame {
 				tabbedPane.addTab("Historia Clinica", panel2);
 				tabbedPane.addTab("Registro", panel3);
 				
-
+				
 				
 			}
+
+
+	public static Animal getAnimal() {	
+		
+		
+		return ObjetAnimal;
+	}		
+
 }
+
 

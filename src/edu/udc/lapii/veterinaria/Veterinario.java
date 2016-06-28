@@ -20,10 +20,14 @@ public class Veterinario {
 		this.matricula = matricula;
 		this.telefono = telefono;
 		if(veterinarios==null){
-		veterinarios=new LinkedList<>();	
+			veterinarios=new LinkedList<>();
+		}
+		if(veterinarios.contains(this)==false){
+			
+			veterinarios.add(this);
 		
 		}
-		veterinarios.add(this);
+	
 	}
 
 
@@ -83,4 +87,32 @@ public class Veterinario {
 	public static LinkedList<Veterinario> getVeterinarios(){
 		return veterinarios;
 	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
+		result = prime * result + matricula;
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((telefono == null) ? 0 : telefono.hashCode());
+		return result;
+	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Veterinario){
+			if(((Veterinario) obj).getMatricula()==this.getMatricula()){
+				return true;
+			}
+			return false;
+		}
+		
+		return super.equals(obj);
+	}
+	
+	
 }

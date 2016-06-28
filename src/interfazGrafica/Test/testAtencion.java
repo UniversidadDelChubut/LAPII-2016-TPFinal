@@ -21,6 +21,7 @@ import edu.udc.lapii.veterinaria.Vacuna;
 import edu.udc.lapii.veterinaria.Vacunacion;
 import edu.udc.lapii.veterinaria.Veterinario;
 import interfazGrafica.Atencion.AtencionVentana;
+import interfazGrafica.Test.*;
 
 public class testAtencion extends JFrame {
 	private static void mostrarVentana() throws ParseException{
@@ -29,9 +30,13 @@ public class testAtencion extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         CargaDeAnimales.cargaAnimal();
 		ListadoDeVacunas.listadoDeVacunas();
+		
 
 		//llamo al animal
+		
 		HistoriaClinica hc = Animal.getAnimal().get(0).getHistoriaClinica();
+		
+		//HistoriaClinica hc = FormHistoriaClinica.getAnimal().getHistoriaClinica();
 
 		 
 		 //lo que se muestra en las tablas
