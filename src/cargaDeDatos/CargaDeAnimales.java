@@ -30,6 +30,7 @@ public class CargaDeAnimales {
 			Animal animal1 = new Animal("Rocky", fNac1, true, "123", "Rawson", "Negro", "perro2.jpg", false, raza1, especie1, propietario1);
 			Animal animal2 = new Animal("Luna", fNac2, true, "321", "Trelew", "Marron","perro1.jpg", false, raza1, especie1, propietario1);
 		
+			
 	}
 	
 	

@@ -79,7 +79,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		JPanel panelBotones=new JPanel(new FlowLayout());
 		
 		
-		//Establezco el tama�o de vista por defecto de las tablas//
+		//Establezco el tamaï¿½o de vista por defecto de las tablas//
 		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
 		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 190));
 		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,190));
@@ -106,7 +106,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		JScrollPane sp3 = new JScrollPane(tablaVacuna);
 		panelTablas.add(sp3,BorderLayout.EAST);
 		
-		//A�ado botones al panel "panelBotones"//
+		//Aï¿½ado botones al panel "panelBotones"//
 		
 		panelBotones.add(botonNuevo,BorderLayout.EAST);
 		
@@ -146,6 +146,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	
 	
 	protected class CrearAtencion extends JPanel implements ActionListener {
+		
 		
 		JButton guardar;
 		JComboBox<Veterinario> veterinarios;
@@ -300,16 +301,10 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		    AtencionVentana.this.tablaAtencion.setVisible(true);
 		    AtencionVentana.this.tablaPracticaMedica.setVisible(true);
 		    AtencionVentana.this.tablaVacuna.setVisible(true);
-			}
+			
+		}
 		}
 		
 		
 	
 }
-	
-	
-	
-	
-
-
-
