@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import javax.swing.JFrame;
 
 import cargaDeDatos.CargaDeAnimales;
+import cargaDeDatos.CargaDeVeterinarios;
 import cargaDeDatos.ListadoDeVacunas;
 import edu.udc.lapii.veterinaria.Ambulatorio;
 import edu.udc.lapii.veterinaria.Animal;
@@ -29,37 +30,28 @@ public class testAtencion extends JFrame {
         //Creo un JFrame//
         JFrame frame = new JFrame("AtencionVentana");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        CargaDeAnimales.cargaAnimal();
 		ListadoDeVacunas.listadoDeVacunas();
+		CargaDeVeterinarios.cargaVeterinarios();
 		
-
 		//llamo al objeto animal
+		
 		objetoRecibidoAnimalHC.SetRecibidosAnimal();
 		
 		HistoriaClinica hc = objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica();
 		
 		 
 		 //lo que se muestra en las tablas
-	        Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
+
+			Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
 	        Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
-	         Vacunacion vacunacion = new Vacunacion(vacuna);
-	        PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh"); 
+	        Vacunacion vacunacion = new Vacunacion(vacuna);
+	         PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh"); 
 	        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
-        //-------------
-	       
-	    
-        
-        /*Creo un listado de veterinarios*/
-        Veterinario vet1=new Veterinario("Oscar", "Gonzales", 34, "2804-541211");
-        Veterinario vet2=new Veterinario("Juan", "Gomez", 501, "2945-582555");
-        Veterinario vet3=new Veterinario("Agustina", "Saavedra", 703, "2804-953317");
-        Veterinario vet4=new Veterinario("Florencia", "Amparo", 47, "2804-634429");
-        Veterinario vet5=new Veterinario("Federico", "Sosa", 1708, "2804-762213");
-        Veterinario vet6=new Veterinario("Helena", "Medina", 910, "2804-052318");
-         
+     
         
         
         
+	        
         hc.setAtencion(amb);
         
         AtencionVentana atv = new AtencionVentana(hc,Vacuna.getListaDeVacunas());

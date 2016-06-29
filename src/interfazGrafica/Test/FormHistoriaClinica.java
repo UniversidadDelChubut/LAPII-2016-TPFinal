@@ -1,6 +1,7 @@
 package interfazGrafica.Test;
-
 import java.awt.EventQueue;
+
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,9 +21,9 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTabbedPane;
 import interfazGrafica.HistoriaClinica.*;
+import interfazGrafica.Registro.JPanelRegistro;
 import cargaDeDatos.*;
 import edu.udc.lapii.veterinaria.*;
-
 public class FormHistoriaClinica extends JFrame {
 	
 	
@@ -57,7 +58,7 @@ public class FormHistoriaClinica extends JFrame {
 				setTitle("HISTORIA CLINICA");//titulo de la ventana
 				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //hace click en x y se cierrra
 				contentPane = new JPanel();						//jpanel para trabajar en el formulario
-				setBounds(100, 100, 770, 575);					//tamaño de la ventana
+				setBounds(100, 100, 1000, 650);					//tamaño de la ventana
 				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));	//bode de la ventana
 				setContentPane(contentPane);						//
 				contentPane.setLayout(null);
@@ -68,20 +69,9 @@ public class FormHistoriaClinica extends JFrame {
 				lblTituloHC.setForeground(Color.BLUE);
 				lblTituloHC.setHorizontalAlignment(SwingConstants.CENTER);
 				lblTituloHC.setFont(new Font("Arial Black", Font.BOLD, 16));
-				lblTituloHC.setBounds(6, 0, 609, 51);
+				lblTituloHC.setBounds(133, 6, 609, 51);
 				contentPane.add(lblTituloHC);
-				/*
 
-				
-				for (Animal animal : Animal.getAnimal()) {
-					
-					if (animal.getMatricula().equals(Matricula)) {
-						
-					System.out.println("encotnrado "+animal.getNombre());	
-					}
-				}
-				
-				*/
 				
 				
 						
@@ -168,10 +158,9 @@ public class FormHistoriaClinica extends JFrame {
 				lblAos.setBounds(214, 106, 38, 16);
 				contentPane.add(lblAos);
 				
-
-				 JPanel panel1=new JPanel();
-				 JLabel label1enPestania=new JLabel("Estas en el panel 1");
-			     panel1.add(label1enPestania);
+				objetoRecibidoAnimalHC.SetRecibidosAnimal();
+				 //JLabel label1enPestania=new JLabel("Estas en el panel 1");
+			   //  panel1.add(label1enPestania);
 			    
 //			     panel1 = new PanelAtenciones(animal);
 			     
@@ -190,9 +179,15 @@ public class FormHistoriaClinica extends JFrame {
 			     
 				JTabbedPane tabbedPane = new JTabbedPane();
 				tabbedPane.setForeground(Color.black);
-				tabbedPane.setBounds(6, 314, 758, 233);
+				tabbedPane.setBounds(6, 314, 959, 308);
 				contentPane.add(tabbedPane);
-				tabbedPane.addTab("Atencion", panel1);
+				
+				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
+				
+
+				 JPanel panel1=new JPanel();
+				 panel1.add(paneldeRegistro);
+				 tabbedPane.addTab("Atencion", panel1);
 				tabbedPane.addTab("Historia Clinica", panel2);
 				tabbedPane.addTab("Registro", panel3);
 				

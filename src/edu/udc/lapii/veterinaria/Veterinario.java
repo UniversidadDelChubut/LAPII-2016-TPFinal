@@ -4,7 +4,8 @@ import java.util.LinkedList;
 
 public class Veterinario {
 	
-	static LinkedList<Veterinario> veterinarios;
+	public static LinkedList<Veterinario> veterinarios;
+
 	private String nombre;
 	private String apellido;
 	private int matricula;
