@@ -11,17 +11,25 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+
 import java.text.ParseException;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTabbedPane;
 
 import interfazGrafica.Atencion.AtencionVentana;
+import interfazGrafica.CalendarioEspecie.Animal;
+import interfazGrafica.CalendarioEspecie.Especie;
+import interfazGrafica.CalendarioEspecie.NCalendario;
+import interfazGrafica.CalendarioEspecie.Raza;
 import interfazGrafica.HistoriaClinica.*;
 import interfazGrafica.Registro.JPanelRegistro;
 import cargaDeDatos.*;
@@ -100,11 +108,11 @@ public class FormHistoriaClinica extends JFrame {
 						lblpropietario_1.setBounds(232, 189, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
-						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle());
-						
+						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle()+" "+String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getNumeroCasa()));						
 						lblDomicilio_1.setBounds(232, 217, 106, 15);
 						contentPane.add(lblDomicilio_1);
 						
+												
 						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getTelefono()));
 						lblTelefono_1.setBounds(232, 245, 106, 15);
 						contentPane.add(lblTelefono_1);
@@ -150,6 +158,7 @@ public class FormHistoriaClinica extends JFrame {
 				JLabel lblDomicilio = new JLabel("Domicilio:");
 				lblDomicilio.setBounds(152, 217, 72, 16);
 				contentPane.add(lblDomicilio);
+
 				
 				JLabel lblTelefono = new JLabel("Telefono:");
 				lblTelefono.setBounds(159, 245, 72, 16);
@@ -201,18 +210,40 @@ public class FormHistoriaClinica extends JFrame {
 				
 				
 				
+				Especie especie = new Especie("Canina",null);
+				Raza raza = new Raza(especie,"Golden");
+				
+				String[] vacunas={"Edad","Parvovirosis ","Moquillo ","Polivalentes ", "Rabia "};
+				
+				
+				Object[][] fechas ={ 
+						{"1 mes ",new String(),new String(),new String(),new String()},
+						{"2 meses",new String(),new String(),new String(),new String()},
+						{"3 meses",new String(),new String(),new String(),new String()},
+						{"4 meses",new String(),new String(),new String(),new String()},
+						{"1 a�o",new String(),new String(),new String(),new String()}, 
+						{"Anual",new String(),new String(),new String(),new String()}
+						};
+				
+				Animal perro = new Animal(fechas, vacunas, raza);
+
+		
+				
+			
 				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
 		        AtencionVentana panelAtencion = new AtencionVentana(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(),Vacuna.getListaDeVacunas());
-
+		        
+		        
+				NCalendario calendarios = new NCalendario(perro);
 				
 				 tabbedPane.addTab("Atencion", panelAtencion);
-				tabbedPane.addTab("Historia Clinica", panel2);
+				tabbedPane.addTab("Historia Clinica", calendarios);
 				tabbedPane.addTab("Registro", paneldeRegistro);
+
 				
 				
 				
 			}
-
 }
 
 
