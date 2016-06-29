@@ -63,10 +63,8 @@ public class FormHistoriaClinica extends JFrame {
 	
 	public static String getEdad(Date fechaNacimiento) {
 		if (fechaNacimiento != null) {
-			//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			StringBuilder result = new StringBuilder();
+			StringBuilder result = new StringBuilder(); //cadena de caracteres esta cadena puede cambiar durante su ejecucion
 			if (fechaNacimiento != null) {
-				//result.append(sdf.format(fechaNacimiento));
 				result.append(" (");
 				Calendar c = new GregorianCalendar();
 				c.setTime(fechaNacimiento);
@@ -81,13 +79,6 @@ public class FormHistoriaClinica extends JFrame {
 private static int calcularEdad(Calendar fechaNac) {
 		Calendar today = Calendar.getInstance();
 		int diffYear = today.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR);
-		int diffMonth = today.get(Calendar.MONTH) - fechaNac.get(Calendar.MONTH);
-		int diffDay = today.get(Calendar.DAY_OF_MONTH) - fechaNac.get(Calendar.DAY_OF_MONTH);
-		// Si está en ese año pero todavía no los ha cumplido
-		if (diffMonth < 0 || (diffMonth == 0 && diffDay < 0)) {
-			diffYear = diffYear - 1; // no aparecían los dos guiones del
-										// postincremento 😐
-		}
 		return diffYear;
 }
 
