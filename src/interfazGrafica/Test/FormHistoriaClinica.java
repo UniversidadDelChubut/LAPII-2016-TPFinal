@@ -221,7 +221,7 @@ public class FormHistoriaClinica extends JFrame {
 						{"2 meses",new String(),new String(),new String(),new String()},
 						{"3 meses",new String(),new String(),new String(),new String()},
 						{"4 meses",new String(),new String(),new String(),new String()},
-						{"1 a�o",new String(),new String(),new String(),new String()}, 
+						{"1 año",new String(),new String(),new String(),new String()}, 
 						{"Anual",new String(),new String(),new String(),new String()}
 						};
 				
