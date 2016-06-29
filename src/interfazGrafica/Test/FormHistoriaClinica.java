@@ -78,46 +78,46 @@ public class FormHistoriaClinica extends JFrame {
 				
 						
 						JLabel lblnombreAnimal_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getNombre());
-						lblnombreAnimal_1.setBounds(182, 79, 60, 15);
+						lblnombreAnimal_1.setBounds(232, 78, 60, 15);
 						contentPane.add(lblnombreAnimal_1);
 						
 						
 						@SuppressWarnings("deprecation")
 						JLabel lbledad_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getFechaNacimiento().getYear()));
-						lbledad_1.setBounds(182, 107, 60, 15);
+						lbledad_1.setBounds(232, 106, 31, 15);
 						contentPane.add(lbledad_1);
 						
 						
 						JLabel lblespecie_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getEspecie().getNombre());
-						lblespecie_1.setBounds(182, 134, 60, 15);
+						lblespecie_1.setBounds(232, 133, 60, 15);
 						contentPane.add(lblespecie_1);
 						
 						JLabel lblRaza_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getRaza().getNombre());
-						lblRaza_1.setBounds(182, 162, 60, 15);
+						lblRaza_1.setBounds(232, 161, 60, 15);
 						contentPane.add(lblRaza_1);
 						
 						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getNombre());
-						lblpropietario_1.setBounds(182, 190, 106, 15);
+						lblpropietario_1.setBounds(232, 189, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
 						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle());
 						
-						lblDomicilio_1.setBounds(182, 218, 106, 15);
+						lblDomicilio_1.setBounds(232, 217, 106, 15);
 						contentPane.add(lblDomicilio_1);
 						
 						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getTelefono()));
-						lblTelefono_1.setBounds(182, 246, 106, 15);
+						lblTelefono_1.setBounds(232, 245, 106, 15);
 						contentPane.add(lblTelefono_1);
 						
 						
 						
-						ImageIcon imageIcon = new ImageIcon(new ImageIcon(objetoRecibidoAnimalHC.GetsAnimal().getFoto()).getImage().getScaledInstance(280, 240, Image.SCALE_AREA_AVERAGING));
+						ImageIcon imageIcon = new ImageIcon(new ImageIcon(objetoRecibidoAnimalHC.GetsAnimal().getFoto()).getImage().getScaledInstance(200, 200, Image.SCALE_AREA_AVERAGING));
 
 						
 						
 						
 						JLabel lblfoto = new JLabel();
-						lblfoto.setBounds(387, 63, 293, 240);
+						lblfoto.setBounds(397, 64, 237, 197);
 						contentPane.add(lblfoto);
 						lblfoto.setIcon(imageIcon);
 						
@@ -128,36 +128,36 @@ public class FormHistoriaClinica extends JFrame {
 				
 				
 				JLabel lblNombreDelAnimal = new JLabel("Nombre del Animal: ");
-				lblNombreDelAnimal.setBounds(37, 78, 144, 16);
+				lblNombreDelAnimal.setBounds(87, 77, 144, 16);
 				contentPane.add(lblNombreDelAnimal);
 				
 				JLabel lblEdadDelAnimal = new JLabel("Edad del Animal:");
-				lblEdadDelAnimal.setBounds(57, 106, 113, 16);
+				lblEdadDelAnimal.setBounds(107, 105, 113, 16);
 				contentPane.add(lblEdadDelAnimal);
 				
 				JLabel lblEspecie = new JLabel("Especie:");
-				lblEspecie.setBounds(110, 134, 60, 16);
+				lblEspecie.setBounds(160, 133, 60, 16);
 				contentPane.add(lblEspecie);
 				
 				JLabel lblRaza = new JLabel("Raza:");
-				lblRaza.setBounds(132, 162, 38, 16);
+				lblRaza.setBounds(182, 161, 38, 16);
 				contentPane.add(lblRaza);
 				
 				JLabel lblPorpietario = new JLabel("Porpietario:");
-				lblPorpietario.setBounds(92, 190, 78, 16);
+				lblPorpietario.setBounds(142, 189, 78, 16);
 				contentPane.add(lblPorpietario);
 				
 				JLabel lblDomicilio = new JLabel("Domicilio:");
-				lblDomicilio.setBounds(102, 218, 72, 16);
+				lblDomicilio.setBounds(152, 217, 72, 16);
 				contentPane.add(lblDomicilio);
 				
 				JLabel lblTelefono = new JLabel("Telefono:");
-				lblTelefono.setBounds(109, 246, 72, 16);
+				lblTelefono.setBounds(159, 245, 72, 16);
 				contentPane.add(lblTelefono);
 				
 
 				JLabel lblAos = new JLabel("años");
-				lblAos.setBounds(214, 106, 38, 16);
+				lblAos.setBounds(278, 105, 38, 16);
 				contentPane.add(lblAos);
 				
 				objetoRecibidoAnimalHC.SetRecibidosAnimal();
@@ -196,7 +196,7 @@ public class FormHistoriaClinica extends JFrame {
 			     
 				JTabbedPane tabbedPane = new JTabbedPane();
 				tabbedPane.setForeground(Color.black);
-				tabbedPane.setBounds(6, 314, 959, 308);
+				tabbedPane.setBounds(19, 284, 959, 326);
 				contentPane.add(tabbedPane);
 				
 				
