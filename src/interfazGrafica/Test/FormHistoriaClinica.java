@@ -78,7 +78,7 @@ public class FormHistoriaClinica extends JFrame {
 	
 private static int calcularEdad(Calendar fechaNac) {
 		Calendar today = Calendar.getInstance();
-		int diffYear = today.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR);
+		int diffYear = today.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR); //aca lo resto de año actual y despues año que recibe por parametro
 		return diffYear;
 }
 
