@@ -53,7 +53,7 @@ public class inicioAtencion extends JFrame {
         
     hc.setAtencion(amb);
         
-        AtencionVentana atv = new AtencionVentana(hc,Vacuna.getListaDeVacunas());
+        AtencionVentana atv = new AtencionVentana(hc);
        
         //La a�ado al frame//
         //frame.getContentPane().add(atv);

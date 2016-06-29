@@ -62,7 +62,77 @@ public class AtencionVentana extends JPanel implements ActionListener{
 
 	
 
-	public class CrearAtencion extends JPanel implements ActionListener {
+	
+	//Constructor que por defecto se crean 2 JPanel//
+	public AtencionVentana(HistoriaClinica historiaClinica){
+		//JPanel que va a contener tablas//
+		this.historiaClinica = historiaClinica;
+		this.listadoVacunas=Vacuna.listaDeVacunas;
+		this.listadoVeterinarios=Veterinario.getVeterinarios();
+		
+		
+		tablaAtencion = new JTable(new ModeloAtencion( historiaClinica.getAtencion()));
+		tablaPracticaMedica = new JTable(new ModeloPracticaMedica(historiaClinica.getAtencion()));
+		tablaVacuna = new JTable(new ModeloVacuna(historiaClinica.getAtencion()));
+		JPanel panelTablas=new JPanel(new BorderLayout());
+
+		//JPanel que va a contener los botones//
+		JPanel panelBotones=new JPanel(new FlowLayout());
+		
+		
+		//Establezco el tamaï¿½o de vista por defecto de las tablas//
+		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
+		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 80));
+		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,80));
+		
+		
+		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
+		desplazable de la tabla.
+		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
+		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
+		JScrollPane sp1 = new JScrollPane(tablaAtencion);
+		panelTablas.add(sp1 ,BorderLayout.WEST);
+		
+		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
+		desplazable de la tabla.
+		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
+		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
+		JScrollPane sp2 = new JScrollPane(tablaPracticaMedica);
+		panelTablas.add(sp2 ,BorderLayout.SOUTH);
+		
+		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
+		desplazable de la tabla.
+		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
+		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
+		JScrollPane sp3 = new JScrollPane(tablaVacuna);
+		panelTablas.add(sp3,BorderLayout.EAST);
+		
+		//Aï¿½ado botones al panel "panelBotones"//
+		
+		panelBotones.add(botonNuevo,BorderLayout.EAST);
+		
+		botonNuevo.setActionCommand("Nuevo");
+		botonNuevo.addActionListener(this);
+		//Coloco un BorderLayout al panel principal//
+		this.setLayout(new BorderLayout());
+		
+		/*Agrego "panel tablas",y "panel botones" al panel principal (atencion ventana).
+		 * Utilizo JSplitPane para dividir el "panel tablas" en 3 partes*/
+		this.add(new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sp1, new JSplitPane(JSplitPane.VERTICAL_SPLIT, sp2, sp3)), BorderLayout.CENTER);
+		this.add(panelBotones, BorderLayout.SOUTH);
+		
+	}	
+	
+	/*Getters*/
+	public HistoriaClinica getHistoriaClinica() {
+		return historiaClinica;
+	}
+
+
+	/*Fin Getters*/
+
+
+public class CrearAtencion extends JPanel implements ActionListener {
 		
 		
 		JButton guardar;
@@ -221,76 +291,6 @@ public class AtencionVentana extends JPanel implements ActionListener{
 			}
 		}
 
-	//Constructor que por defecto se crean 2 JPanel//
-	public AtencionVentana(HistoriaClinica historiaClinica,LinkedList<Vacuna> listadoVacunas){
-		//JPanel que va a contener tablas//
-		this.historiaClinica = historiaClinica;
-		this.listadoVacunas=listadoVacunas;
-		this.listadoVeterinarios=Veterinario.getVeterinarios();
-		
-		
-		tablaAtencion = new JTable(new ModeloAtencion( historiaClinica.getAtencion()));
-		tablaPracticaMedica = new JTable(new ModeloPracticaMedica(historiaClinica.getAtencion()));
-		tablaVacuna = new JTable(new ModeloVacuna(historiaClinica.getAtencion()));
-		JPanel panelTablas=new JPanel(new BorderLayout());
-
-		//JPanel que va a contener los botones//
-		JPanel panelBotones=new JPanel(new FlowLayout());
-		
-		
-		//Establezco el tamaï¿½o de vista por defecto de las tablas//
-		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
-		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 80));
-		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,80));
-		
-		
-		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
-		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
-		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
-		JScrollPane sp1 = new JScrollPane(tablaAtencion);
-		panelTablas.add(sp1 ,BorderLayout.WEST);
-		
-		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
-		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
-		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
-		JScrollPane sp2 = new JScrollPane(tablaPracticaMedica);
-		panelTablas.add(sp2 ,BorderLayout.SOUTH);
-		
-		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
-		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
-		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
-		JScrollPane sp3 = new JScrollPane(tablaVacuna);
-		panelTablas.add(sp3,BorderLayout.EAST);
-		
-		//Aï¿½ado botones al panel "panelBotones"//
-		
-		panelBotones.add(botonNuevo,BorderLayout.EAST);
-		
-		botonNuevo.setActionCommand("Nuevo");
-		botonNuevo.addActionListener(this);
-		//Coloco un BorderLayout al panel principal//
-		this.setLayout(new BorderLayout());
-		
-		/*Agrego "panel tablas",y "panel botones" al panel principal (atencion ventana).
-		 * Utilizo JSplitPane para dividir el "panel tablas" en 3 partes*/
-		this.add(new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sp1, new JSplitPane(JSplitPane.VERTICAL_SPLIT, sp2, sp3)), BorderLayout.CENTER);
-		this.add(panelBotones, BorderLayout.SOUTH);
-		
-	}	
-	
-	/*Getters*/
-	public HistoriaClinica getHistoriaClinica() {
-		return historiaClinica;
-	}
-
-
-	/*Fin Getters*/
-
-
-
 
 	public void actionPerformed(ActionEvent e) {
 
@@ -305,7 +305,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		
 	}
 	
-			
+	
 		
 	
 }
