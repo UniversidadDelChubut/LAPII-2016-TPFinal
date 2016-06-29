@@ -49,8 +49,7 @@ public class testAtencion extends JFrame {
 	        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
      
         
-        
-        
+
 	        
         hc.setAtencion(amb);
         
