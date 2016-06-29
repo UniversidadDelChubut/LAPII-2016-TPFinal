@@ -60,6 +60,7 @@ public class testAtencion extends JFrame {
         frame.pack();
         frame.setVisible(true);
 	}
+	
 
 	//main de prueba//
 	public static void main(String[] args) {
