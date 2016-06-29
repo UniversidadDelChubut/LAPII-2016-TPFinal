@@ -62,6 +62,7 @@ public class testAtencion extends JFrame {
 	}
 	
 	
+	
 	//main de prueba//
 	public static void main(String[] args) {
 		
