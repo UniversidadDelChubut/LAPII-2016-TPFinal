@@ -14,7 +14,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 
 import java.text.ParseException;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.awt.Font;
@@ -38,7 +40,7 @@ public class FormHistoriaClinica extends JFrame {
 	
 	
 	private JPanel contentPane;
-	
+
 	public static void main(String[] args) {
 		
 //		final PruebaPasajeMatricula matricula = new PruebaPasajeMatricula();
@@ -56,6 +58,47 @@ public class FormHistoriaClinica extends JFrame {
 		});
 	}
 
+	//metodo que calcula la edad
+	
+	
+	public static String getEdad(Date fechaNacimiento) {
+		if (fechaNacimiento != null) {
+			//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			StringBuilder result = new StringBuilder();
+			if (fechaNacimiento != null) {
+				//result.append(sdf.format(fechaNacimiento));
+				result.append(" (");
+				Calendar c = new GregorianCalendar();
+				c.setTime(fechaNacimiento);
+				result.append(calcularEdad(c));
+				result.append(" años)");
+			}
+			return result.toString();
+		}
+		return "";
+	}
+	
+private static int calcularEdad(Calendar fechaNac) {
+		Calendar today = Calendar.getInstance();
+		int diffYear = today.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR);
+		int diffMonth = today.get(Calendar.MONTH) - fechaNac.get(Calendar.MONTH);
+		int diffDay = today.get(Calendar.DAY_OF_MONTH) - fechaNac.get(Calendar.DAY_OF_MONTH);
+		// Si está en ese año pero todavía no los ha cumplido
+		if (diffMonth < 0 || (diffMonth == 0 && diffDay < 0)) {
+			diffYear = diffYear - 1; // no aparecían los dos guiones del
+										// postincremento 😐
+		}
+		return diffYear;
+}
+
+//termina metodo de calcular edad
+	
+	
+	
+	
+	
+	
+	
 	public FormHistoriaClinica() throws ParseException {
 				//Poner nombre mas significativo
 				//Hacer que el constructor reciba una instancia de animal
@@ -89,10 +132,8 @@ public class FormHistoriaClinica extends JFrame {
 						lblnombreAnimal_1.setBounds(232, 78, 60, 15);
 						contentPane.add(lblnombreAnimal_1);
 						
-						
-						@SuppressWarnings("deprecation")
-						JLabel lbledad_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getFechaNacimiento().getYear()));
-						lbledad_1.setBounds(232, 106, 31, 15);
+						JLabel lbledad_1 = new JLabel(getEdad(objetoRecibidoAnimalHC.GetsAnimal().getFechaNacimiento()));
+						lbledad_1.setBounds(232, 106, 78, 15);
 						contentPane.add(lbledad_1);
 						
 						
@@ -104,17 +145,17 @@ public class FormHistoriaClinica extends JFrame {
 						lblRaza_1.setBounds(232, 161, 60, 15);
 						contentPane.add(lblRaza_1);
 						
-						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getNombre());
+						JLabel lblpropietario_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getApellido()+"  "+objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getNombre());
 						lblpropietario_1.setBounds(232, 189, 106, 15);
 						contentPane.add(lblpropietario_1);
 						
-						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle()+" "+String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getNumeroCasa()));						
-						lblDomicilio_1.setBounds(232, 217, 106, 15);
+						JLabel lblDomicilio_1 = new JLabel(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getCalle()+" ("+String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getDomicilio().getNumeroCasa())+")");						
+						lblDomicilio_1.setBounds(232, 217, 144, 15);
 						contentPane.add(lblDomicilio_1);
 						
 												
 						JLabel lblTelefono_1 = new JLabel(String.valueOf(objetoRecibidoAnimalHC.GetsAnimal().getPropietario().getTelefono()));
-						lblTelefono_1.setBounds(232, 245, 106, 15);
+						lblTelefono_1.setBounds(232, 244, 106, 15);
 						contentPane.add(lblTelefono_1);
 						
 						
@@ -164,10 +205,7 @@ public class FormHistoriaClinica extends JFrame {
 				lblTelefono.setBounds(159, 245, 72, 16);
 				contentPane.add(lblTelefono);
 				
-
-				JLabel lblAos = new JLabel("años");
-				lblAos.setBounds(278, 105, 38, 16);
-				contentPane.add(lblAos);
+				
 				
 				objetoRecibidoAnimalHC.SetRecibidosAnimal();
 
