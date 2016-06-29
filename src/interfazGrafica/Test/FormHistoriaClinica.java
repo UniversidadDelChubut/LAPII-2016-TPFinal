@@ -20,6 +20,8 @@ import java.awt.Image;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTabbedPane;
+
+import interfazGrafica.Atencion.AtencionVentana;
 import interfazGrafica.HistoriaClinica.*;
 import interfazGrafica.Registro.JPanelRegistro;
 import cargaDeDatos.*;
@@ -200,9 +202,10 @@ public class FormHistoriaClinica extends JFrame {
 				
 				
 				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
-			
+		        AtencionVentana panelAtencion = new AtencionVentana(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(),Vacuna.getListaDeVacunas());
+
 				
-				 tabbedPane.addTab("Atencion", panel1);
+				 tabbedPane.addTab("Atencion", panelAtencion);
 				tabbedPane.addTab("Historia Clinica", panel2);
 				tabbedPane.addTab("Registro", paneldeRegistro);
 				
