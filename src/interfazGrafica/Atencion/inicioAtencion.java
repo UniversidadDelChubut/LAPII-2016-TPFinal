@@ -1,4 +1,4 @@
-package interfazGrafica.Test;
+package interfazGrafica.Atencion;
 
 import java.awt.Component;
 import java.text.ParseException;
@@ -22,11 +22,10 @@ import edu.udc.lapii.veterinaria.Raza;
 import edu.udc.lapii.veterinaria.Vacuna;
 import edu.udc.lapii.veterinaria.Vacunacion;
 import edu.udc.lapii.veterinaria.Veterinario;
-import interfazGrafica.Atencion.AtencionVentana;
 import interfazGrafica.HistoriaClinica.objetoRecibidoAnimalHC;
 import interfazGrafica.Test.*;
 
-public class testAtencion extends JFrame {
+public class inicioAtencion extends JFrame {
 	public static Component mostrarVentana() throws ParseException{
         //Creo un JFrame//
        // JFrame frame = new JFrame("AtencionVentana");

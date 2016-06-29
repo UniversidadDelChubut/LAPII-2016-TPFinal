@@ -28,6 +28,7 @@ import java.awt.Color;
 import javax.swing.JTabbedPane;
 
 import interfazGrafica.Atencion.AtencionVentana;
+import interfazGrafica.Atencion.inicioAtencion;
 import interfazGrafica.CalendarioEspecie.Animal;
 import interfazGrafica.CalendarioEspecie.Especie;
 import interfazGrafica.CalendarioEspecie.NCalendario;
@@ -252,7 +253,7 @@ private static int calcularEdad(Calendar fechaNac) {
 		        
 				NCalendario calendarios = new NCalendario(perro);
 				
-				 tabbedPane.addTab("Atencion", testAtencion.mostrarVentana());
+				 tabbedPane.addTab("Atencion", inicioAtencion.mostrarVentana());
 				tabbedPane.addTab("Calendario de Vacunacion", calendarios);
 				tabbedPane.addTab("Registro", paneldeRegistro);
 
