@@ -183,7 +183,7 @@ private static int calcularEdad(Calendar fechaNac) {
 				lblRaza.setBounds(182, 161, 38, 16);
 				contentPane.add(lblRaza);
 				
-				JLabel lblPorpietario = new JLabel("Porpietario:");
+				JLabel lblPorpietario = new JLabel("Propietario:");
 				lblPorpietario.setBounds(142, 189, 78, 16);
 				contentPane.add(lblPorpietario);
 				
@@ -201,36 +201,20 @@ private static int calcularEdad(Calendar fechaNac) {
 				objetoRecibidoAnimalHC.SetRecibidosAnimal();
 
 			
-
+/*
 			     //panel1
 			     JPanel panel1=new JPanel();
 				 JLabel label1enPestania=new JLabel("Estas en el panel 1");
 			     panel1.add(label1enPestania);
-
-
-				
-				
-				/*
-
-				//JLabel label1enPestania=new JLabel("Estas en el panel 1");
-			   //  panel1.add(label1enPestania);
-			    
-//			     panel1 = new PanelAtenciones(animal);
-				*/
-			     
 			     //panel2
 			     JPanel panel2=new JPanel();
 				 JLabel label2enPestania=new JLabel("Estas en el panel 2");
 			     panel2.add(label2enPestania);
-				
-			     
 			     //panel3
-
 			     JPanel panel3=new JPanel();
 				 JLabel label3enPestania=new JLabel();
-			     panel3.add(label3enPestania);
-				
-			     
+			     panel3.add(label3enPestania);		
+	*/		     
 			     
 				JTabbedPane tabbedPane = new JTabbedPane();
 				tabbedPane.setForeground(Color.black);
@@ -256,7 +240,9 @@ private static int calcularEdad(Calendar fechaNac) {
 				
 				Animal perro = new Animal(fechas, vacunas, raza);
 
-		
+
+				JPanelRegistro.setDefaultLocale(getLocale());
+				
 				
 			
 				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
@@ -266,11 +252,9 @@ private static int calcularEdad(Calendar fechaNac) {
 				NCalendario calendarios = new NCalendario(perro);
 				
 				 tabbedPane.addTab("Atencion", panelAtencion);
-				tabbedPane.addTab("Historia Clinica", calendarios);
+				tabbedPane.addTab("Calendario de Vacunacion", calendarios);
 				tabbedPane.addTab("Registro", paneldeRegistro);
 
-				
-				
 				
 			}
 }
