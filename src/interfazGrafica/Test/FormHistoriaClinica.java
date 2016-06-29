@@ -159,10 +159,24 @@ public class FormHistoriaClinica extends JFrame {
 				contentPane.add(lblAos);
 				
 				objetoRecibidoAnimalHC.SetRecibidosAnimal();
-				 //JLabel label1enPestania=new JLabel("Estas en el panel 1");
+
+			
+
+			     //panel1
+			     JPanel panel1=new JPanel();
+				 JLabel label1enPestania=new JLabel("Estas en el panel 1");
+			     panel1.add(label1enPestania);
+
+
+				
+				
+				/*
+
+				//JLabel label1enPestania=new JLabel("Estas en el panel 1");
 			   //  panel1.add(label1enPestania);
 			    
 //			     panel1 = new PanelAtenciones(animal);
+				*/
 			     
 			     //panel2
 			     JPanel panel2=new JPanel();
@@ -171,8 +185,9 @@ public class FormHistoriaClinica extends JFrame {
 				
 			     
 			     //panel3
+
 			     JPanel panel3=new JPanel();
-				 JLabel label3enPestania=new JLabel("Estas en el panel 3");
+				 JLabel label3enPestania=new JLabel();
 			     panel3.add(label3enPestania);
 				
 			     
@@ -182,14 +197,14 @@ public class FormHistoriaClinica extends JFrame {
 				tabbedPane.setBounds(6, 314, 959, 308);
 				contentPane.add(tabbedPane);
 				
-				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
 				
-
-				 JPanel panel1=new JPanel();
-				 panel1.add(paneldeRegistro);
+				
+				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
+			
+				
 				 tabbedPane.addTab("Atencion", panel1);
 				tabbedPane.addTab("Historia Clinica", panel2);
-				tabbedPane.addTab("Registro", panel3);
+				tabbedPane.addTab("Registro", paneldeRegistro);
 				
 				
 				
