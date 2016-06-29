@@ -246,12 +246,13 @@ private static int calcularEdad(Calendar fechaNac) {
 				
 			
 				JPanelRegistro paneldeRegistro = new JPanelRegistro(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(), this);
-		        AtencionVentana panelAtencion = new AtencionVentana(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica(),Vacuna.getListaDeVacunas());
+
+				//testAtencion panelAtencion;
 		        
 		        
 				NCalendario calendarios = new NCalendario(perro);
 				
-				 tabbedPane.addTab("Atencion", panelAtencion);
+				 tabbedPane.addTab("Atencion", testAtencion.mostrarVentana());
 				tabbedPane.addTab("Calendario de Vacunacion", calendarios);
 				tabbedPane.addTab("Registro", paneldeRegistro);
 

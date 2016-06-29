@@ -9,12 +9,13 @@ public class Principal {
 		Especie especie = new Especie("Canina",null);
 		Raza raza = new Raza(especie,"Golden");
 		String[] vacunas={"Edad","Parvovirosis ","Moquillo ","Polivalentes ", "Rabia "};
+		
 		Object[][] fechas ={ 
 				{"1 mes ",new String(),new String(),new String(),new String()},
 				{"2 meses",new String(),new String(),new String(),new String()},
 				{"3 meses",new String(),new String(),new String(),new String()},
 				{"4 meses",new String(),new String(),new String(),new String()},
-				{"1 año",new String(),new String(),new String(),new String()}, 
+				{"1 aï¿½o",new String(),new String(),new String(),new String()}, 
 				{"Anual",new String(),new String(),new String(),new String()}
 				};
 		Animal perro = new Animal(fechas, vacunas, raza);

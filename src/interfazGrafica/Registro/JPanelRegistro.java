@@ -32,7 +32,8 @@ public class JPanelRegistro extends JPanel implements ActionListener{
 	private final JButton nuevoRegistro;
 	private LinkedList<Registro> registros = null;
 	private final JTable tabla;
-	private JDialog frame;
+	private JFrame frame;
+
 	public JPanelRegistro(HistoriaClinica historiaClinica, JFrame contenedor) {
 		super(new GridBagLayout());
 		
@@ -149,7 +150,7 @@ public class JPanelRegistro extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-	    frame = new JDialog((JFrame)this.getParent().getParent().getParent(), "Nuevo Registro", true );
+	    frame = new JFrame();
 		frame.setContentPane(new JPanelCrearRegistro());
         frame.pack();
         frame.setResizable(false);

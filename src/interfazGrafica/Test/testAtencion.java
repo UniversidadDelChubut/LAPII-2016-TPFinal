@@ -1,5 +1,6 @@
 package interfazGrafica.Test;
 
+import java.awt.Component;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.LinkedList;
@@ -26,10 +27,10 @@ import interfazGrafica.HistoriaClinica.objetoRecibidoAnimalHC;
 import interfazGrafica.Test.*;
 
 public class testAtencion extends JFrame {
-	private static void mostrarVentana() throws ParseException{
+	public static Component mostrarVentana() throws ParseException{
         //Creo un JFrame//
-        JFrame frame = new JFrame("AtencionVentana");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // JFrame frame = new JFrame("AtencionVentana");
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ListadoDeVacunas.listadoDeVacunas();
 		CargaDeVeterinarios.cargaVeterinarios();
 		
@@ -42,26 +43,27 @@ public class testAtencion extends JFrame {
 		 
 		 //lo que se muestra en las tablas
 
-			Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
-	        Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
-	        Vacunacion vacunacion = new Vacunacion(vacuna);
-	         PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh"); 
-	        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
-     
-        
+		Veterinario veterinario1 = new Veterinario("Juan", "Perez", 21, "2804-864530");
+        Vacuna vacuna = new Vacuna("Anti-Rabia", "Pa' gato");
+        Vacunacion vacunacion = new Vacunacion(vacuna);
+         PracticaMedica practicamedica = new PracticaMedica("Cirugia", "gydh"); 
+        Ambulatorio amb=new Ambulatorio(1, new Date(), "boluditis", "cronica",practicamedica, veterinario1, vacunacion);
+ 
+    
 
-	        
-        hc.setAtencion(amb);
+        
+    hc.setAtencion(amb);
         
         AtencionVentana atv = new AtencionVentana(hc,Vacuna.getListaDeVacunas());
        
         //La a�ado al frame//
-        frame.getContentPane().add(atv);
-        frame.pack();
-        frame.setVisible(true);
+        //frame.getContentPane().add(atv);
+        //frame.pack();
+        //frame.setVisible(true);
+		return atv;
 	}
 	
-	
+	/*
 	
 	//main de prueba//
 	public static void main(String[] args) {
@@ -78,6 +80,6 @@ public class testAtencion extends JFrame {
 		
 		});	
 	
-	}
+	}*/
 
 }
