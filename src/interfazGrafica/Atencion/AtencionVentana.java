@@ -81,8 +81,8 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		
 		//Establezco el tamaï¿½o de vista por defecto de las tablas//
 		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
-		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 190));
-		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,190));
+		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 80));
+		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,80));
 		
 		
 		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
@@ -301,8 +301,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 		    AtencionVentana.this.tablaAtencion.setVisible(true);
 		    AtencionVentana.this.tablaPracticaMedica.setVisible(true);
 		    AtencionVentana.this.tablaVacuna.setVisible(true);
-			
-		}
+			}
 		}
 		
 		
