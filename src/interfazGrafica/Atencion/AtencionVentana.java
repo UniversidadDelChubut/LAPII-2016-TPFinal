@@ -1,6 +1,7 @@
 package interfazGrafica.Atencion;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -16,6 +17,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import	javax.swing.*;
 
+import cargaDeDatos.CargaDeVeterinarios;
+import cargaDeDatos.ListadoDeVacunas;
 import edu.udc.lapii.veterinaria.Ambulatorio;
 import edu.udc.lapii.veterinaria.Atencion;
 import edu.udc.lapii.veterinaria.Domiciliaria;
@@ -57,8 +60,8 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	//Creo un boton,uno para editar una atencion y otro para crear una nueva atencion//
 	private JButton botonNuevo=new JButton("NUEVA ATENCION");
 
-
 	JFrame frame;
+	
 
 	
 
@@ -304,7 +307,15 @@ public class CrearAtencion extends JPanel implements ActionListener {
 		}
 		
 	}
-	
+	public Component creacionVentana(){
+		CargaDeVeterinarios.cargaVeterinarios();
+		ListadoDeVacunas.listadoDeVacunas();
+		AtencionVentana atv=new AtencionVentana(this.historiaClinica);
+		
+		
+		return atv;
+		
+	}
 	
 		
 	

@@ -1,5 +1,5 @@
 package interfazGrafica.Test;
-import java.awt.EventQueue;
+
 
 
 
@@ -25,10 +25,11 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.EventQueue;
+
 import javax.swing.JTabbedPane;
 
 import interfazGrafica.Atencion.AtencionVentana;
-import interfazGrafica.Atencion.inicioAtencion;
 import interfazGrafica.CalendarioEspecie.Animal;
 import interfazGrafica.CalendarioEspecie.Especie;
 import interfazGrafica.CalendarioEspecie.NCalendario;
@@ -253,7 +254,9 @@ private static int calcularEdad(Calendar fechaNac) {
 		        
 				NCalendario calendarios = new NCalendario(perro);
 				
-				 tabbedPane.addTab("Atencion", inicioAtencion.mostrarVentana());
+				AtencionVentana atenVen=new AtencionVentana(objetoRecibidoAnimalHC.GetsAnimal().getHistoriaClinica());
+				
+				 tabbedPane.addTab("Atencion", atenVen.creacionVentana());
 				tabbedPane.addTab("Calendario de Vacunacion", calendarios);
 				tabbedPane.addTab("Registro", paneldeRegistro);
 
