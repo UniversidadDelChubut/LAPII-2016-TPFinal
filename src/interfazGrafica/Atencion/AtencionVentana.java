@@ -59,12 +59,7 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	
 	//Creo un boton,uno para editar una atencion y otro para crear una nueva atencion//
 	private JButton botonNuevo=new JButton("NUEVA ATENCION");
-
-	JFrame frame;
 	
-
-	
-
 	
 	//Constructor que por defecto se crean 2 JPanel//
 	public AtencionVentana(HistoriaClinica historiaClinica){
@@ -299,7 +294,7 @@ public class CrearAtencion extends JPanel implements ActionListener {
 
 	
 		if(e.getActionCommand().equals("Nuevo")){
-	    frame = new JFrame("Nueva Atencion");
+	    JFrame frame = new JFrame("Nueva Atencion");
 	    frame.setContentPane(new CrearAtencion(this.historiaClinica));
         frame.pack();
         frame.setResizable(false);
