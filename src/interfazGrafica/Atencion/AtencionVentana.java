@@ -37,8 +37,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-/*Clase que es un JPanel,que como atributos va a tener 3 tablas(tablaAtencion,tablaPracticasMedicas,tablaVacunas),y 2 botones
-(editar,nuevo)*/
+/*Clase que es un JPanel,que como atributos va a tener 3 tablas(tablaAtencion,tablaPracticasMedicas,tablaVacunas), un boton,
+ * un listado de veterinarios y vacunas,y una historia clinica
+*/
 
 public class AtencionVentana extends JPanel implements ActionListener{
 	
@@ -57,61 +58,61 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	
 	private JTable tablaVacuna;
 	
-	//Creo un boton,uno para editar una atencion y otro para crear una nueva atencion//
+	/*Creo un boton para crear una nueva atencion*/
 	private JButton botonNuevo=new JButton("NUEVA ATENCION");
 	
 	
-	//Constructor que por defecto se crean 2 JPanel//
+	/*Constructor que recibe una historia clinica de un animal*/
 	public AtencionVentana(HistoriaClinica historiaClinica){
-		//JPanel que va a contener tablas//
+		
 		this.historiaClinica = historiaClinica;
 		this.listadoVacunas=Vacuna.listaDeVacunas;
 		this.listadoVeterinarios=Veterinario.getVeterinarios();
 		
-		
+		/*Creo las tablas con sus respectivos modelos,y creo un JPanel que contendra las 3 tablas*/
 		tablaAtencion = new JTable(new ModeloAtencion( historiaClinica.getAtencion()));
 		tablaPracticaMedica = new JTable(new ModeloPracticaMedica(historiaClinica.getAtencion()));
 		tablaVacuna = new JTable(new ModeloVacuna(historiaClinica.getAtencion()));
 		JPanel panelTablas=new JPanel(new BorderLayout());
 
-		//JPanel que va a contener los botones//
+		/*JPanel que va a contener los botones*/
 		JPanel panelBotones=new JPanel(new FlowLayout());
 		
 		
-		//Establezco el tamaï¿½o de vista por defecto de las tablas//
+		/*Establezco el tama�o de vista por defecto de las tablas*/
 		this.tablaAtencion.setPreferredScrollableViewportSize(new Dimension(460, 400));
 		this.tablaPracticaMedica.setPreferredScrollableViewportSize(new Dimension(180, 80));
 		this.tablaVacuna.setPreferredScrollableViewportSize(new Dimension(180,80));
 		
 		
 		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
+		desplazable de la tabla,y a su vez que se vea la cabecera de la misma.
 		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
 		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
 		JScrollPane sp1 = new JScrollPane(tablaAtencion);
 		panelTablas.add(sp1 ,BorderLayout.WEST);
 		
 		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
+		desplazable de la tabla,y a su vez que se vea la cabecera de la misma..
 		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
 		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
 		JScrollPane sp2 = new JScrollPane(tablaPracticaMedica);
 		panelTablas.add(sp2 ,BorderLayout.SOUTH);
 		
 		/*Creo un JScrollPane que va a contener una tabla---el JScrollPane va a permitir que se pueda obtener una vista
-		desplazable de la tabla.
+		desplazable de la tabla,y a su vez que se vea la cabecera de la misma..
 		A continuacion lo inserto en el panel que va a contener todas las tablas y le asigno en que posicion del "panel de tablas"
 		va a estar ubicado el JScrollPane que a su vez tiene dentro una tabla*/
 		JScrollPane sp3 = new JScrollPane(tablaVacuna);
 		panelTablas.add(sp3,BorderLayout.EAST);
 		
-		//Aï¿½ado botones al panel "panelBotones"//
+		/*A�ado el boton al panel "panelBotones"*/
 		
 		panelBotones.add(botonNuevo,BorderLayout.EAST);
 		
 		botonNuevo.setActionCommand("Nuevo");
 		botonNuevo.addActionListener(this);
-		//Coloco un BorderLayout al panel principal//
+		/*Coloco un BorderLayout al panel principal*/
 		this.setLayout(new BorderLayout());
 		
 		/*Agrego "panel tablas",y "panel botones" al panel principal (atencion ventana).
@@ -130,9 +131,11 @@ public class AtencionVentana extends JPanel implements ActionListener{
 	/*Fin Getters*/
 
 
+/*Creo una clase interna la cual va a mostrar las opciones que se pueden elegir a la hora de dar de alta una nueva atencion
+ * y a su vez va a obtener los datos de la nueva atencion y guardarlos*/	
 public class CrearAtencion extends JPanel implements ActionListener {
 		
-		
+		/*Componentes de un objeto "CrearAtencion"*/
 		JButton guardar;
 		JComboBox<Veterinario> veterinarios;
 		JComboBox<String> tipoAtencion;
@@ -142,6 +145,7 @@ public class CrearAtencion extends JPanel implements ActionListener {
 		JTextField diagnostico;
 		JTextField observaciones;
 		
+		/*Constructor de la clase interna que recibe una historia clinica*/
 		public CrearAtencion(HistoriaClinica historia) {
 			
 			super(new GridBagLayout());
